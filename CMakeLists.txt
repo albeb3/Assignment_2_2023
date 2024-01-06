@@ -18,6 +18,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   std_srvs
   tf
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -54,18 +55,19 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+ add_message_files(
+   FILES
+   Posvel.msg
+   
+ )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
+ add_service_files(
+   FILES
 #   Service1.srv
-#   Service2.srv
-# )
+    Last_target.srv
+    Dist_vel.srv
+ )
 
 ## Generate actions in the 'action' folder
  add_action_files(
@@ -78,6 +80,7 @@ find_package(catkin REQUIRED COMPONENTS
    DEPENDENCIES
    actionlib_msgs
    geometry_msgs
+   std_msgs
  )
 
 ################################################
@@ -141,6 +144,10 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/assignment_2_2023_node.cpp)
+ add_executable(client_node src/client.cpp)
+ add_executable(subscriber1_node src/subscriber.cpp)
+ add_executable(last_target_service src/last_target.cpp)
+ add_executable(dist_vel_service src/dist_vel.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -152,11 +159,25 @@ include_directories(
 ## same as for the library above
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
+add_dependencies(last_target_service ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
 
+ target_link_libraries(client_node
+   ${catkin_LIBRARIES}
+ )
+  target_link_libraries(subscriber1_node
+   ${catkin_LIBRARIES}
+ )
+ target_link_libraries(dist_vel_service
+   ${catkin_LIBRARIES}
+ )
+  target_link_libraries(last_target_service
+   ${catkin_LIBRARIES}
+ )
 #############
 ## Install ##
 #############

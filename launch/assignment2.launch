@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find assignment_2_2023)/launch/assignment1.launch" />
+    <node pkg="assignment_2_2023" type="client_node" name="client_node" output="screen"  />
+    <node pkg="assignment_2_2023" type="dist_vel_service" name="dist_vel_service" >
+    <param name="max_values" type='int' value= "10" />
+    </node>
+    <node pkg="assignment_2_2023" type="last_target_service" name="last_target_service"  />
+</launch>
