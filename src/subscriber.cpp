@@ -20,7 +20,7 @@ void subCallback(const assignment_2_2023::Posvel::ConstPtr& msg){
 }
 
 int main(int argc, char** argv){
-	ros::init(argc, argv, "turtlebot_subscriber");
+	ros::init(argc, argv, "subscriber");
 	ros::NodeHandle nh;
 
 	ros::Subscriber sub = nh.subscribe("/posvel", 1, subCallback);

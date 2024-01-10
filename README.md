@@ -23,6 +23,26 @@ This repository contains a set of ROS nodes designed to accomplish specific task
 ### Launch File
 - Orchestrates the execution of all three nodes.
 - Configures the parameter for the third node to determine the averaging window size for speed calculation.
+---
+o run the project, follow these steps:
+
+1. **Clone this repository to your system.**
+    ```bash
+    git clone <repository_url>
+    ```
+
+2. **Install the necessary dependencies by running `catkin_make`.**
+
+3. **Launch the main node using the provided launch file:**
+    ```bash
+    roslaunch assignment_2_2023 assignment2.launch
+    ```
+
+4. **To use the service, execute:**
+    ```bash
+    rosservice call /dist_vel_service
+	rosservice call /last_target_service
+    ```
 
 ---
 

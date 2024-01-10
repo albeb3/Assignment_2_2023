@@ -4,7 +4,7 @@
 #include <assignment_2_2023/PlanningAction.h>
 #include "assignment_2_2023/Dist_vel.h"
 
-using namespace ros;
+
 
 // Dichiarazione delle variabili globali
 
@@ -16,6 +16,7 @@ float *velocity_values=nullptr; // Array per memorizzare i valori di velocitàIn
 float goal_x=0,goal_y=0;
 float position_x, position_y, vel_x, vel_y;
 float ave_speed,dist;
+
 void target_position(const assignment_2_2023::PlanningActionGoal::ConstPtr &msg){
 	goal_x=msg->goal.target_pose.pose.position.x;
 	goal_y=msg->goal.target_pose.pose.position.y;
@@ -74,24 +75,26 @@ void dataCallback(const assignment_2_2023::Posvel::ConstPtr& data){
 
     // Aggiornamento del contatore
     count++;
+   
 }
 
 bool send_info(assignment_2_2023::Dist_vel::Request &req, assignment_2_2023::Dist_vel::Response &res) {
     // Implementazione per ottenere le coordinate dell'ultimo goal inviato
     res.distance = dist;  // Assegna la coordinata x del goal
     res.average_velocity = ave_speed;  // Assegna la coordinata y del goal
-
     return true;  // Restituisce true per indicare che il servizio è stato gestito correttamente
 }
 
 int main(int argc, char **argv){
     // Inizializzazione del nodo
-    init(argc, argv, "dist_vel_service");
-    NodeHandle nh;
-	
+    ros::init(argc, argv, "dist_vel_service");
+    ros::NodeHandle nh;
+	ros::Subscriber sub = nh.subscribe("/posvel", 1, dataCallback);
 	ros::Subscriber sub_goal = nh.subscribe<assignment_2_2023::PlanningActionGoal>("/reaching_goal/goal", 1, target_position);
 	ros::ServiceServer service=nh.advertiseService("/dist_vel_service",send_info);
-	
+	// Creazione del subscriber e associare la callback per i dati del robot
+    
+    
 	if (ros::param::get("/dist_vel_service/max_values", max_values)) {
     	
     	if (max_values > 0) {
@@ -103,14 +106,9 @@ int main(int argc, char **argv){
 	} else {
     	ROS_ERROR("Failed to retrieve 'averaging_window' parameter.");
     	return 1; // Esci dal nodo con un codice di errore
-}
+	}
 
 
-	
-	
-    // Creazione del subscriber e associare la callback per i dati del robot
-    ros::Subscriber sub = nh.subscribe("/posvel", 10, dataCallback);
-    
    
     // Processare i callback dei messaggi
     ros::spin();

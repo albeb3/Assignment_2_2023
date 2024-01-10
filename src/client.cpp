@@ -21,7 +21,7 @@ void odomCallback(const nav_msgs::Odometry::ConstPtr &msg) {
     robot_x = msg->pose.pose.position.x;
     robot_y = msg->pose.pose.position.y;
     robot_vel_x = msg->twist.twist.linear.x;
-    robot_vel_y = msg->twist.twist.angular.y;
+    robot_vel_y = msg->twist.twist.linear.y;
 }
 
 
