@@ -13,6 +13,7 @@ float robot_x = 0.0, robot_y = 0.0, robot_vel_x = 0.0, robot_vel_y = 0.0;
 
 bool cancel_requested = false;
 bool busy=false;
+std::string feedback_status;
 
 ros::Publisher pos_publisher;
 
@@ -23,18 +24,18 @@ void odomCallback(const nav_msgs::Odometry::ConstPtr &msg) {
     robot_vel_y = msg->twist.twist.angular.y;
 }
 
-	
-      
 
 void userInput() {
     	actionlib::SimpleActionClient<assignment_2_2023::PlanningAction> client("/reaching_goal", true);
 		ROS_INFO("Waiting for action server to start...");
         client.waitForServer();
+        
         ROS_INFO("Action server started!");
         float goal_x, goal_y;
 		char input=' ';
     	
     while (ros::ok() && !ros::isShuttingDown()) {
+    	
         if( cancel_requested){
         	ROS_INFO("Do you want delete the goal?");
         	ROS_INFO("Press y or n"); 

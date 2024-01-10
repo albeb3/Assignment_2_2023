@@ -58,6 +58,7 @@ find_package(catkin REQUIRED COMPONENTS
  add_message_files(
    FILES
    Posvel.msg
+   PosGoal.msg
    
  )
 
@@ -148,7 +149,8 @@ include_directories(
  add_executable(subscriber1_node src/subscriber.cpp)
  add_executable(last_target_service src/last_target.cpp)
  add_executable(dist_vel_service src/dist_vel.cpp)
-
+ add_executable(reachgoals src/reachgoals.cpp)
+  add_executable(sendgoals src/Send_Goals.cpp)
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -176,6 +178,12 @@ add_dependencies(last_target_service ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catki
    ${catkin_LIBRARIES}
  )
   target_link_libraries(last_target_service
+   ${catkin_LIBRARIES}
+ )
+   target_link_libraries(sendgoals
+   ${catkin_LIBRARIES}
+ )
+   target_link_libraries(reachgoals
    ${catkin_LIBRARIES}
  )
 #############
