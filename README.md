@@ -28,7 +28,7 @@ To run the project, follow these steps:
 
 1. **Clone this repository to your system.**
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/albeb3/Assignment_2_2023.git
     ```
 
 2. **Install the necessary dependencies by running `catkin_make`.**
