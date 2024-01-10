@@ -120,3 +120,100 @@ To run the project, follow these steps:
     
 ![rosrun rqt_graph rqt_graph](https://github.com/albeb3/Assignment_2_2023/blob/main/nodiassignment%20RT.jpg)
 
+### Pseudochode Node 1 (Action Client Node `client.cpp`)
+
+
+
+## Variables
+
+- `robot_x`, `robot_y`, `robot_vel_x`, `robot_vel_y`
+- `cancel_requested = false`
+- `busy = false`
+- `feedback_status`
+
+## ROS Components
+
+- Create a ROS publisher for `/posvel`
+- Create a ROS subscriber for `/odom`
+
+## Functions
+
+### `odomCallback(msg)`
+
+- Update `robot_x`, `robot_y`, `robot_vel_x`, `robot_vel_y` using data from `msg`
+
+### `userInput()`
+
+- Create a SimpleActionClient for `assignment_2_2023/PlanningAction` named `client`
+
+- Loop while ROS is OK and not shutting down:
+  - If `cancel_requested`:
+    - Prompt user to delete the goal
+    - Read user input
+    - If user input is 'y':
+      - Cancel the goal and print "Goal cancelled!"
+      - Clear input buffer
+    - Else if user input is 'n':
+      - Clear input buffer
+    - Else:
+      - Print "Invalid Input" and clear input buffer
+
+  - Else if `client` has result and `busy`:
+    - Get the action state
+    - Print "Action finished: <state>"
+    - Set `busy` to false
+
+  - Else:
+    - If not `busy`:
+      - Prompt user to insert goal coordinates (x, y)
+
+    - Else if `busy`:
+      - Prompt user to press 'x' to cancel the goal or 'c' to check goal status
+      - Read user input
+
+    - If user input is 'x':
+      - Set `cancel_requested` to true
+      - Clear input buffer and continue
+
+    - Else if not `busy`:
+      - Prompt user to insert 'x' coordinate
+      - Read 'x' coordinate from user
+      - If input is invalid, print error and continue
+
+      - Prompt user to insert 'y' coordinate
+      - Read 'y' coordinate from user
+      - If input is invalid, print error and continue
+
+      - Print "Sending the goal"
+      - Set `busy` to true
+      - Create a `PlanningGoal` and send it using the action client
+
+    - Else if `busy` and user input is 'c':
+      - Print "Wait for the result, try again"
+      - Clear input buffer
+
+    - Else:
+      - Print "Invalid input!"
+      - Clear input buffer
+
+## Main Function
+
+- Initialize ROS node
+- Initialize node handle
+
+- Create a ROS publisher for `/posvel`
+- Create a ROS subscriber for `/odom`
+
+- Create a thread for `userInput` function
+
+- Create a ROS rate with frequency 1 Hz
+
+- Loop while ROS is OK:
+  - Create a `Posvel` message with current robot position and velocity
+  - Publish the `Posvel` message
+  - Sleep according to the rate
+  - Spin once
+
+- Return 0
+
+
