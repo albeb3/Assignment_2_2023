@@ -96,8 +96,7 @@ This repository contains a set of ROS nodes designed to accomplish specific task
   - **ServiceServer:**
     - Establishes `/dist_vel_service` as a `ServiceServer` to retrieve average speed and distance from the goal.
     - The `send_info` function populates the fields of the `Dist_vel` service message with velocity and distance values obtained from `dataCallback`.
-<<<<<<< HEAD
+
     
 ![rosrun rqt_graph rqt_graph](https://github.com/albeb3/Assignment_2_2023/blob/main/nodiassignment%20RT.jpg)
-=======
->>>>>>> 9a94853af4a38f0f3e649128c41e5740372abea0
+
