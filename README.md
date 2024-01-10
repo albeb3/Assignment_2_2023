@@ -24,7 +24,7 @@ This repository contains a set of ROS nodes designed to accomplish specific task
 - Orchestrates the execution of all three nodes.
 - Configures the parameter for the third node to determine the averaging window size for speed calculation.
 ---
-o run the project, follow these steps:
+To run the project, follow these steps:
 
 1. **Clone this repository to your system.**
     ```bash
