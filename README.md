@@ -124,17 +124,13 @@ To run the project, follow these steps:
 # ROS Node - Goal Sender
 
 ## Initialization
-1. Initialize ROS node
-2. Create ROS publisher for position and speed of the robot
-3. Create ROS subscriber for Odometry messages
-4. Create an action client for the PlanningAction
-5. Create a thread for user input
-6. Initialize global variables for robot position, speed, and condition block
+1. Create ROS publisher for position and speed of the robot
+2. Create ROS subscriber for Odometry messages
+3. Create an action client for the PlanningAction
+4. Create a thread for user input
 
 ## UserInput Thread
-7. Wait for the action server to start
-8. Display a message indicating the action server has started
-9. While ROS is okay and not shutting down:
+5. While ROS is okay and not shutting down:
     - If the action has finished and the robot is busy:
         - Get and print the action status
         - Set busy to false
@@ -156,15 +152,10 @@ To run the project, follow these steps:
             - Display a message indicating to wait for the result and try again
 
 ## Main Loop
-29. While ROS is okay:
+6. While ROS is okay:
     - Create Posvel message
     - Populate the message with robot position and speed
     - Publish the message
-    - Sleep for a specified rate
-    - Spin once to handle callbacks
-
-## Join UserInput Thread
-35. Join the user input thread
 
 # End
 
