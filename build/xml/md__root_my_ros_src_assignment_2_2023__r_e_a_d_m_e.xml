@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e" kind="page">
+    <compoundname>md__root_my_ros_src_assignment_2_2023_README</compoundname>
+    <title>Research track- Assignment 2</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This repository contains a set of ROS nodes designed to accomplish specific tasks within a robot simulation environment. The implementation fulfills the following requirements:</para>
+<sect1 id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e_1autotoc_md1">
+<title>Task Description</title>
+<sect2 id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e_1autotoc_md2">
+<title>Node 1: Action Client Node</title>
+<para><itemizedlist>
+<listitem><para><bold>Functionality:</bold><itemizedlist>
+<listitem><para>Allows users to set a target (x, y) or cancel it.</para>
+</listitem><listitem><para>Utilizes action server feedback/status to determine target achievement.</para>
+</listitem><listitem><para>Publishes robot position and velocity as a custom message (x, y, vel_x, vel_z) based on the topic <computeroutput>/odom</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e_1autotoc_md3">
+<title>Node 2: Service Node (Retrieve Last Target Coordinates)</title>
+<para><itemizedlist>
+<listitem><para><bold>Functionality:</bold><itemizedlist>
+<listitem><para>When called, returns the coordinates of the last target set by the user.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e_1autotoc_md4">
+<title>Node 3: Service Node (Robot&apos;s Distance &amp; Average Speed)</title>
+<para><itemizedlist>
+<listitem><para><bold>Functionality:</bold><itemizedlist>
+<listitem><para>Subscribes to robot position and velocity through a custom message.</para>
+</listitem><listitem><para>Computes the distance from the target and the robot&apos;s average speed.</para>
+</listitem><listitem><para>Parameterized with the averaging window size for speed calculations.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e_1autotoc_md5">
+<title>Launch File</title>
+<para><itemizedlist>
+<listitem><para>Orchestrates the execution of all three nodes. </para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e_1autotoc_md6">
+<title>- Configures the parameter for the third node to determine the averaging window size for speed calculation.</title>
+<para>To run the project, follow these steps:</para>
+<para><orderedlist>
+<listitem><para><bold>Clone this repository to your system.</bold> ```bash git clone <ulink url="https://github.com/albeb3/Assignment_2_2023.git">https://github.com/albeb3/Assignment_2_2023.git</ulink> ```</para>
+</listitem><listitem><para><bold>Install the necessary dependencies by running <computeroutput>catkin_make</computeroutput>.</bold></para>
+</listitem><listitem><para><bold>Launch the main node using the provided launch file:</bold> ```bash roslaunch assignment_2_2023 assignment2.launch ```</para>
+</listitem><listitem><para><bold>To use the service, execute:</bold> ```bash rosservice call /dist_vel_service rosservice call /last_target_service ```</para>
+</listitem></orderedlist>
+</para>
+<para><hruler/>
+</para>
+<sect2 id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e_1autotoc_md8">
+<title>Node 1: Action Client Node (&lt;tt&gt;client.cpp&lt;/tt&gt;)</title>
+<para><itemizedlist>
+<listitem><para><bold>Language and Files:</bold><itemizedlist>
+<listitem><para>Implemented in C++.</para>
+</listitem><listitem><para>Located in the <computeroutput>src</computeroutput> folder named <computeroutput><ref refid="client_8cpp" kindref="compound">client.cpp</ref></computeroutput>.</para>
+</listitem><listitem><para>Utilizes a message file named <computeroutput>Posvel.h</computeroutput>, containing fields <computeroutput>x</computeroutput>, <computeroutput>y</computeroutput>, <computeroutput>vel_x</computeroutput>, and <computeroutput>vel_y</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Message Structure:</bold><itemizedlist>
+<listitem><para>Created a custom message file (<computeroutput>Posvel.h</computeroutput>) with <computeroutput>float64</computeroutput> fields (<computeroutput>x</computeroutput>, <computeroutput>y</computeroutput>, <computeroutput>vel_x</computeroutput>, and <computeroutput>vel_y</computeroutput>).</para>
+</listitem><listitem><para>The decision to use <computeroutput>vel_y</computeroutput> instead of <computeroutput>vel_z</computeroutput> was made for coherence with the third node&apos;s requirement for calculating average speed, ensuring consistency within the system&apos;s data structure.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Initialization:</bold><itemizedlist>
+<listitem><para>Initializes a ROS node, sets up a publisher to send information using the custom message, and subscribes to the <computeroutput>/odom</computeroutput> topic via the <computeroutput>odomCallback</computeroutput> function to gather robot position and velocity data.</para>
+</listitem><listitem><para>Utilizes <computeroutput>std::thread</computeroutput> functionality to enable continuous transmission by the publisher while allowing user interaction without blocking the execution.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Functionality:</bold><itemizedlist>
+<listitem><para><bold>Target Handling:</bold><itemizedlist>
+<listitem><para>Initializes a <computeroutput>busy</computeroutput> variable as <computeroutput>false</computeroutput>.</para>
+</listitem><listitem><para>Prompts the user to input target/goal coordinates initially.</para>
+</listitem><listitem><para>Changes <computeroutput>busy</computeroutput> to <computeroutput>true</computeroutput> after acquiring the target coordinates.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>User Interaction:</bold><itemizedlist>
+<listitem><para>Based on the <computeroutput>busy</computeroutput> state, prompts the user to either cancel the goal or check if the goal has been reached.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Goal Transmission:</bold><itemizedlist>
+<listitem><para>After populating the goal field of the action message with the target coordinates, the client sends this data using the <computeroutput>sendGoal()</computeroutput> functionality to the server.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Goal Status Check:</bold><itemizedlist>
+<listitem><para>Implements code to request the server&apos;s goal status using the <computeroutput>getState</computeroutput> functionality when the user checks if the goal is reached.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+<para><hruler/>
+</para>
+</sect2>
+<sect2 id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e_1autotoc_md10">
+<title>Node 2: Service Node (&lt;tt&gt;last_target.cpp&lt;/tt&gt;)</title>
+<para><itemizedlist>
+<listitem><para><bold>Language and Files:</bold><itemizedlist>
+<listitem><para>Implemented in C++.</para>
+</listitem><listitem><para>Located in the <computeroutput>src</computeroutput> folder named <computeroutput><ref refid="last__target_8cpp" kindref="compound">last_target.cpp</ref></computeroutput>.</para>
+</listitem><listitem><para>Utilizes a service file (<computeroutput>.srv</computeroutput>) containing a response with two <computeroutput>float32</computeroutput> fields: <computeroutput>goal_x</computeroutput> and <computeroutput>goal_y</computeroutput>, without a request field.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Service Structure:</bold><itemizedlist>
+<listitem><para>Created a service file defining the service structure without a request but containing <computeroutput>goal_x</computeroutput> and <computeroutput>goal_y</computeroutput> as response fields of type <computeroutput>float32</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Initialization:</bold><itemizedlist>
+<listitem><para>Initializes the <computeroutput>last_target_service</computeroutput> node.</para>
+</listitem><listitem><para>Sets up a subscriber to listen to the <computeroutput>/reaching_goal/goal</computeroutput> topic, extracting goal coordinates using the <computeroutput>target_position</computeroutput> callback function.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Service Server:</bold><itemizedlist>
+<listitem><para>Establishes a <computeroutput>ServiceServer</computeroutput> named <computeroutput>/last_target_service</computeroutput> to respond to service requests.</para>
+</listitem><listitem><para>Implements the <computeroutput>send_position</computeroutput> function, retrieving and returning the last goal&apos;s coordinates upon service request.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Observations:</bold><itemizedlist>
+<listitem><para>The <computeroutput>target_position</computeroutput> callback captures goal coordinates upon receiving messages from the <computeroutput>/reaching_goal/goal</computeroutput> topic.</para>
+</listitem><listitem><para>The <computeroutput>send_position</computeroutput> function responds to service requests on <computeroutput>/last_target_service</computeroutput> by providing the last received goal&apos;s coordinates.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+<para><hruler/>
+</para>
+</sect2>
+<sect2 id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e_1autotoc_md12">
+<title>Node 3: Service Node (&lt;tt&gt;dist_vel.cpp&lt;/tt&gt;)</title>
+<para><itemizedlist>
+<listitem><para><bold>File Structure:</bold><itemizedlist>
+<listitem><para>Implemented in C++.</para>
+</listitem><listitem><para>Located in <computeroutput>src</computeroutput> folder as <computeroutput><ref refid="dist__vel_8cpp" kindref="compound">dist_vel.cpp</ref></computeroutput>.</para>
+</listitem><listitem><para>Utilizes a custom <computeroutput>.srv</computeroutput> file named <computeroutput>Dist_vel</computeroutput> located in the <computeroutput>srv</computeroutput> folder.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Service Structure:</bold><itemizedlist>
+<listitem><para>The <computeroutput>Dist_vel</computeroutput> service file defines the service structure without a request but containing the distance from the goal and the robot&apos;s average speed as response fields of type <computeroutput>float32</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Initialization:</bold><itemizedlist>
+<listitem><para>Initializes two subscribers:<itemizedlist>
+<listitem><para>Subscribes to <computeroutput>/reaching_goal/goal</computeroutput> to obtain target coordinates via the <computeroutput>target_position</computeroutput> callback.</para>
+</listitem><listitem><para>Subscribes to <computeroutput>/posvel</computeroutput> to retrieve robot&apos;s coordinates and velocity using <computeroutput>dataCallback</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Functionality:</bold><itemizedlist>
+<listitem><para>**<computeroutput>target_position</computeroutput> Callback:**<itemizedlist>
+<listitem><para>Extracts and stores the goal&apos;s coordinates in <computeroutput>goal_x</computeroutput> and <computeroutput>goal_y</computeroutput> variables.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>**<computeroutput>dataCallback</computeroutput> Function:**<itemizedlist>
+<listitem><para>Gathers robot&apos;s coordinates (position_x, position_y) and velocity (vel_x, vel_y).</para>
+</listitem><listitem><para>Utilizes two functions inside this callback:<itemizedlist>
+<listitem><para>Calculates the distance between the robot and the goal.</para>
+</listitem><listitem><para>Computes the average speed based on a vector with a dimension set by <computeroutput>get:param</computeroutput> from the launch file.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Average Speed Calculation:</bold><itemizedlist>
+<listitem><para>Utilizes a vector to store the velocity values obtained from the callback.</para>
+</listitem><listitem><para>Implements counters for managing vector updates with the modulo operator.</para>
+</listitem><listitem><para>Calculates the average speed by summing up values in the array and dividing by the total number of values.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>ServiceServer:</bold><itemizedlist>
+<listitem><para>Establishes <computeroutput>/dist_vel_service</computeroutput> as a <computeroutput>ServiceServer</computeroutput> to retrieve average speed and distance from the goal.</para>
+</listitem><listitem><para>The <computeroutput>send_info</computeroutput> function populates the fields of the <computeroutput>Dist_vel</computeroutput> service message with velocity and distance values obtained from <computeroutput>dataCallback</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+<para><image type="html" name="nodiassignment%20RT.jpg" inline="yes"></image>
+</para>
+</sect2>
+<sect2 id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e_1autotoc_md13">
+<title>Pseudochode Node 1 (Action Client Node &lt;tt&gt;client.cpp&lt;/tt&gt;)</title>
+</sect2>
+</sect1>
+<sect1 id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e_1autotoc_md14">
+<title>ROS Node - Goal Sender</title>
+<sect2 id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e_1autotoc_md15">
+<title>Initialization</title>
+<para><orderedlist>
+<listitem><para>Create ROS publisher for position and speed of the robot</para>
+</listitem><listitem><para>Create ROS subscriber for Odometry messages</para>
+</listitem><listitem><para>Create an action client for the PlanningAction</para>
+</listitem><listitem><para>Create a thread for user input</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+<sect2 id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e_1autotoc_md16">
+<title>UserInput Thread</title>
+<para><orderedlist>
+<listitem><para>While ROS is okay and not shutting down:<itemizedlist>
+<listitem><para>If the action has finished and the robot is busy:<itemizedlist>
+<listitem><para>Get and print the action status</para>
+</listitem><listitem><para>Set busy to false</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Else if the robot is not busy:<itemizedlist>
+<listitem><para>Display a prompt to insert the goal coordinates (x, y)</para>
+</listitem><listitem><para>Read and validate user input for x coordinate</para>
+</listitem><listitem><para>Read and validate user input for y coordinate</para>
+</listitem><listitem><para>Display a message indicating the goal is being sent</para>
+</listitem><listitem><para>Send the goal using the action client</para>
+</listitem><listitem><para>Set busy to true</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Else if the robot is busy:<itemizedlist>
+<listitem><para>Display options to the user (cancel goal, check goal)</para>
+</listitem><listitem><para>Read user input</para>
+</listitem><listitem><para>If user chooses to cancel goal:<itemizedlist>
+<listitem><para>Cancel the goal using the action client</para>
+</listitem><listitem><para>Display a message indicating the goal is canceled</para>
+</listitem><listitem><para>Set busy to false</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Else if user chooses to check goal:<itemizedlist>
+<listitem><para>Display a message indicating to wait for the result and try again</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+<sect2 id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e_1autotoc_md17">
+<title>Main Loop</title>
+<para><orderedlist>
+<listitem><para>While ROS is okay:<itemizedlist>
+<listitem><para>Create Posvel message</para>
+</listitem><listitem><para>Populate the message with robot position and speed</para>
+</listitem><listitem><para>Publish the message</para>
+</listitem></itemizedlist>
+</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="md__root_my_ros_src_assignment_2_2023__r_e_a_d_m_e_1autotoc_md18">
+<title>End</title>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

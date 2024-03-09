@@ -1,38 +1,43 @@
-/*
-	Author: albeb3
-	Date: 11/01/2024
-	Student ID: 3962994
+/**
+* \file client.cpp
+* \brief Action Client Node
+* \author Alberto Bono 3962994
+* \date 04/03/2024
+*
+* \details
+* Subscribes to:<BR>
+*		/odom
+* Publisher to :<BR>
+*		/posvel
+* SimpleActionClient:<BR>
+*		/reaching_goal
+*
+* Description:<BR>
+* Allows users to set a target (x, y) or cancel it.
+* Utilizes action server feedback/status to determine target achievement.
+* Publishes robot position and velocity as a custom message (x, y, vel_x, vel_z) based on the topic `/odom`.
+**/
 	
-	Description:
-  		- Allows users to set a target (x, y) or cancel it.
-  		- Utilizes action server feedback/status to determine target achievement.
-  		- Publishes robot position and velocity as a custom message (x, y, vel_x, vel_z) based on the topic `/odom`.
-*/
-//====================================HEADERS==============================================
 #include <ros/ros.h>
-/*		Inclusion of headers for using custom message and action message 				*/
 #include <actionlib/client/simple_action_client.h>
 #include <assignment_2_2023/PlanningAction.h>
 #include <assignment_2_2023/Posvel.h>
-/*		Inclusion of headers for using ros messages 									*/
 #include <geometry_msgs/Point.h>
 #include <geometry_msgs/Pose.h>
 #include <geometry_msgs/Twist.h>
 #include <nav_msgs/Odometry.h>
-/*		Inclusion of headers for using input from keyboard 								*/
 #include <iostream>
-/*		Inclusion of headers for using thread  											*/
 #include <thread>
-//====================================GLOBAL VARIABLES=======================================
-/*		Declaration of global variables for robot position and robot speed				*/
-float robot_x = 0.0, robot_y = 0.0, robot_vel_x = 0.0, robot_vel_y = 0.0;
-/*		Declaration of global variable for managing the condition block					*/
-bool  busy=false;
-/*		Creating a ROS publisher for position and speed of robot						*/
-ros::Publisher pos_publisher;
-//====================================FUNCTIONS===============================================
-/*		Callback of sub subscriber receives Odometry message from /odom topic
-		which fills the global variables for the robot position and robot speed
+
+float robot_x = 0.0, robot_y = 0.0, robot_vel_x = 0.0, robot_vel_y = 0.0; ///< variables for robot position and robot speed
+bool  busy=false; ///<  variable for managing the condition block		
+ros::Publisher pos_publisher;  ///< publisher for position and speed of robot	
+ros::Subscriber sub; ///< subscriber for position and speed of robot from odom
+
+/**		
+* \brief Callback for the odom subscriber
+* \param msg(nav_msgs::Odometry)
+* \result robot_x, robot_y, robot_vel_x, robot_vel_y
 */
 void odomCallback(const nav_msgs::Odometry::ConstPtr &msg) {
     robot_x = msg->pose.pose.position.x;
@@ -41,26 +46,24 @@ void odomCallback(const nav_msgs::Odometry::ConstPtr &msg) {
     robot_vel_y = msg->twist.twist.linear.y;
 }
 
-/*		Function to handle user input for sending goals to a ROS action server
+/**		
+* \brief Function to handle user input for sending goals to a ROS action server
 */
 void userInput() {
-	// Creating a ROS action client for the PlanningAction
-    actionlib::SimpleActionClient<assignment_2_2023::PlanningAction> client("/reaching_goal", true);
+    actionlib::SimpleActionClient<assignment_2_2023::PlanningAction> client("/reaching_goal", true); ///< action client for the PlanningAction
 	ROS_INFO("Waiting for action server to start...");
     client.waitForServer();
     ROS_INFO("Action server started!");
     float goal_x, goal_y;
 	char input=' ';
-	// Main loop for user interaction    	
-    while (ros::ok() && !ros::isShuttingDown()) {
-		// Action has finished, get and print the status
-		if(client.waitForResult(ros::Duration(0.1)) && busy){ 
-			actionlib::SimpleClientGoalState state = client.getState();//receive the status
+    while (ros::ok() && !ros::isShuttingDown()) { 	///< Main loop for user interaction    	
+		if(client.waitForResult(ros::Duration(0.1)) && busy){ 		///< action has finished, get and print the status
+			actionlib::SimpleClientGoalState state = client.getState();///<receive the status
    	 		ROS_INFO("Action finished: %s \n",state.toString().c_str());
 			busy=false;
 		}
-		// Insertion of the goal coordinates
-		else{
+
+		else{ ///< insertion of the goal coordinates
 			if(!busy){
         		ROS_INFO("INSERT THE GOAL COORDINATE (x,y) \n");
         		ROS_INFO("Insert 'x' coordinate, then press ENTER: ");
@@ -84,8 +87,8 @@ void userInput() {
         		client.sendGoal(goal);
         		busy=true;	
         	}
-        	// Options when a goal is in progress to allow the user to cancel or check the goal
-        	else if(busy){
+
+        	else if(busy){ ///< options when a goal is in progress to allow the user to cancel or check the goal
         		ROS_INFO("->Press 'x' to cancel the goal, then press Enter:");
         		ROS_INFO("->Press 'c' to check if the goal has been reached, then press Enter:");
         		std::cin >> input;
@@ -97,13 +100,12 @@ void userInput() {
             		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
            			continue;	
         		}
-        		//condition for restart the loop
-        		else if(busy && input=='c') {
+        		else if(busy && input=='c') { ///< condition for restart the loop
         			ROS_INFO("wait for the result try again");
         			std::cin.clear();
             		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         		}
-        		else {
+        		else {  ///< condition for handling invalid input
         			ROS_INFO("Invalid input!");
         			std::cin.clear();
             		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -112,8 +114,9 @@ void userInput() {
 		}
 	}
 }
-
-//====================================MAIN=================================
+/**		
+* \brief Main function thread input_thread and publish posvel
+*/
 int main(int argc, char **argv) {
 	
     ros::init(argc, argv, "goal_sender_node");
@@ -123,7 +126,7 @@ int main(int argc, char **argv) {
 	rate.sleep();
 	
     pos_publisher = nh.advertise<assignment_2_2023::Posvel>("/posvel", 1000);
-    ros::Subscriber sub = nh.subscribe<nav_msgs::Odometry>("/odom", 1, odomCallback);
+    sub = nh.subscribe<nav_msgs::Odometry>("/odom", 1, odomCallback);
 
     std::thread input_thread(userInput);
    

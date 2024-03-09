@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_4fef79e7177ba769987a8da36c892c5f" kind="dir">
+    <compoundname>/root/my_ros/src/assignment_2_2023/build</compoundname>
+    <innerdir refid="dir_ba386b0453ec91de46e36b83999df64c">/root/my_ros/src/assignment_2_2023/build/html</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/root/my_ros/src/assignment_2_2023/build/"/>
+  </compounddef>
+</doxygen>

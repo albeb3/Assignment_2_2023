@@ -1,0 +1,514 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dist__vel_8cpp" kind="file" language="C++">
+    <compoundname>dist_vel.cpp</compoundname>
+    <includes local="no">ros/ros.h</includes>
+    <includes local="no">assignment_2_2023/PlanningAction.h</includes>
+    <includes local="yes">assignment_2_2023/Dist_vel.h</includes>
+    <includes local="no">assignment_2_2023/Posvel.h</includes>
+    <includes local="no">assignment_2_2023/Dimarray.h</includes>
+    <includes local="no">math.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>assignment_2_2023/Dimarray.h</label>
+      </node>
+      <node id="3">
+        <label>assignment_2_2023/PlanningAction.h</label>
+      </node>
+      <node id="5">
+        <label>assignment_2_2023/Posvel.h</label>
+      </node>
+      <node id="4">
+        <label>assignment_2_2023/Dist_vel.h</label>
+      </node>
+      <node id="2">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="7">
+        <label>math.h</label>
+      </node>
+      <node id="1">
+        <label>/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp</label>
+        <link refid="dist__vel_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="dist__vel_8cpp_1a16c5403a230f1b66e607eae331f46238" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int max_values</definition>
+        <argsstring></argsstring>
+        <name>max_values</name>
+        <initializer>=0</initializer>
+        <briefdescription>
+<para>variables for the dimension of the array for handling the average speed and its dimension taken as a parameter </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="28" column="5" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dist__vel_8cpp_1a37f50ca61644027b7cde21c420ca5d5c" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* velocity_values</definition>
+        <argsstring></argsstring>
+        <name>velocity_values</name>
+        <initializer>=nullptr</initializer>
+        <briefdescription>
+<para>variables for the array for handling the average speed *<zwj/>/ </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="29" column="7" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dist__vel_8cpp_1ac0df33c619e3c146b6f892ec65219336" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float goal_x</definition>
+        <argsstring></argsstring>
+        <name>goal_x</name>
+        <initializer>=0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="30" column="7" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dist__vel_8cpp_1a86a424410ae6b4f43baca838da5f993b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float goal_y</definition>
+        <argsstring></argsstring>
+        <name>goal_y</name>
+        <initializer>=0.0</initializer>
+        <briefdescription>
+<para>variables for the target position <linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="30" column="13" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dist__vel_8cpp_1a23b231f4f8af79d2071b60cbacebfc99" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float position_x</definition>
+        <argsstring></argsstring>
+        <name>position_x</name>
+        <initializer>=0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="31" column="7" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dist__vel_8cpp_1af31f30f5c4fab9afb7dedf677d53104b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float position_y</definition>
+        <argsstring></argsstring>
+        <name>position_y</name>
+        <initializer>=0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="31" column="18" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dist__vel_8cpp_1a4b312b3530217eb51cbad6e930610f6b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float vel_x</definition>
+        <argsstring></argsstring>
+        <name>vel_x</name>
+        <initializer>=0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="31" column="29" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dist__vel_8cpp_1a1dd0876197a1e2dba35d41d6a6d9eab4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float vel_y</definition>
+        <argsstring></argsstring>
+        <name>vel_y</name>
+        <initializer>=0.0</initializer>
+        <briefdescription>
+<para>variables for the robot position and the robot speed </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="31" column="35" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dist__vel_8cpp_1a379a54da91b0270aa821ef254e52ff5b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ave_speed</definition>
+        <argsstring></argsstring>
+        <name>ave_speed</name>
+        <initializer>=0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="32" column="7" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dist__vel_8cpp_1a2578b368dad74bcd4a88bbeeb319a833" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float dist</definition>
+        <argsstring></argsstring>
+        <name>dist</name>
+        <initializer>=0.0</initializer>
+        <briefdescription>
+<para>variables for the robot distance from the target and the robot average speed </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="32" column="16" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dist__vel_8cpp_1ad43c3812e6d13e0518d9f8b8f463ffcf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="33" column="5" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dist__vel_8cpp_1a4b00721003b8d35559a55c9098ff36c5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ind</definition>
+        <argsstring></argsstring>
+        <name>ind</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>variables for manage the code </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="33" column="11" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="dist__vel_8cpp_1a32326bf70de23fa6ecebbba49176b608" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool send_info</definition>
+        <argsstring>(assignment_2_2023::Dist_vel::Request &amp;req, assignment_2_2023::Dist_vel::Response &amp;res)</argsstring>
+        <name>send_info</name>
+        <param>
+          <type>assignment_2_2023::Dist_vel::Request &amp;</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>assignment_2_2023::Dist_vel::Response &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+<para>Service Function to Send Distance and Average Velocity Information. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>req(assignment_2_2023::Dist_vel::Request)</parametername>
+<parametername>res(assignment_2_2023::Dist_vel::Response)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="40" column="6" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="dist__vel_8cpp_1a9347ed39139710945fc7a33ffc61b133" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float distance</definition>
+        <argsstring>(float position_x, float position_y, float goal_x, float goal_y)</argsstring>
+        <name>distance</name>
+        <param>
+          <type>float</type>
+          <declname>position_x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>position_y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>goal_x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>goal_y</declname>
+        </param>
+        <briefdescription>
+<para>Auxiliary function to calculate the distance between two points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>position_y goal_x goal_y </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>distance between target and position of the robot </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="52" column="7" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="52" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="dist__vel_8cpp_1aabb4187e7254c2de55c68763be95b9b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float average_speed</definition>
+        <argsstring>(float v_x, float v_y)</argsstring>
+        <name>average_speed</name>
+        <param>
+          <type>float</type>
+          <declname>v_x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>v_y</declname>
+        </param>
+        <briefdescription>
+<para>Auxiliary function to calculate the average speed of a robot based on an array of dim elements. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v_x</parametername>
+<parametername>v_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>average speed </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="61" column="7" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="61" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="dist__vel_8cpp_1a12b48276fb89f0b623f71f6416f1a4bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void target_position</definition>
+        <argsstring>(const assignment_2_2023::PlanningActionGoal::ConstPtr &amp;msg)</argsstring>
+        <name>target_position</name>
+        <param>
+          <type>const assignment_2_2023::PlanningActionGoal::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Callback of sub subscriber receives PlanningActionGoal message from /reaching_goal/goal topic which fills the global variables for the target position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg(assignment_2_2023::PlanningActionGoal)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="74" column="6" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="dist__vel_8cpp_1ae8dbc1c603c13591b206477f1d7f6245" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dataCallback</definition>
+        <argsstring>(const assignment_2_2023::Posvel::ConstPtr &amp;data)</argsstring>
+        <name>dataCallback</name>
+        <param>
+          <type>const assignment_2_2023::Posvel::ConstPtr &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Callback for Monitoring Robot Position and Velocity Information. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data(assignment_2_2023::Posvel)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="83" column="6" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="83" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="dist__vel_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+<para>Main function that manage the speed array dimension from parameter sent from launch file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" line="96" column="5" bodyfile="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp" bodystart="96" bodyend="124"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Service Node. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Alberto Bono 3962994 </para>
+</simplesect>
+<simplesect kind="date"><para>04/03/2024</para>
+</simplesect>
+Subscribes to:<linebreak/>
+ /posvel /reaching_goal/goal</para>
+<para>Server:<linebreak/>
+ /dist_vel_service</para>
+<para>Description:<linebreak/>
+ Subscribes to robot position and velocity through a custom message. Computes the distance from the target and the robot&apos;s average speed. Parameterized with the averaging window size for speed calculations. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="21"><highlight class="preprocessor">#include<sp/>&lt;ros/ros.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assignment_2_2023/PlanningAction.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;assignment_2_2023/Dist_vel.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assignment_2_2023/Posvel.h&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assignment_2_2023/Dimarray.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dist__vel_8cpp_1a16c5403a230f1b66e607eae331f46238" kindref="member">max_values</ref>=0;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*<ref refid="dist__vel_8cpp_1a37f50ca61644027b7cde21c420ca5d5c" kindref="member">velocity_values</ref>=</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>goal_x=0.0,<ref refid="dist__vel_8cpp_1a86a424410ae6b4f43baca838da5f993b" kindref="member">goal_y</ref>=0.0;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>position_x=0.0,<sp/>position_y=0.0,<sp/>vel_x=0.0,<sp/><ref refid="dist__vel_8cpp_1a1dd0876197a1e2dba35d41d6a6d9eab4" kindref="member">vel_y</ref>=0.0;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>ave_speed=0.0,<ref refid="dist__vel_8cpp_1a2578b368dad74bcd4a88bbeeb319a833" kindref="member">dist</ref>=0.0;<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>0,<ref refid="dist__vel_8cpp_1a4b00721003b8d35559a55c9098ff36c5" kindref="member">ind</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="dist__vel_8cpp_1a32326bf70de23fa6ecebbba49176b608" kindref="member">send_info</ref>(assignment_2_2023::Dist_vel::Request<sp/>&amp;req,<sp/>assignment_2_2023::Dist_vel::Response<sp/>&amp;res)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>res.distance<sp/>=<sp/><ref refid="dist__vel_8cpp_1a2578b368dad74bcd4a88bbeeb319a833" kindref="member">dist</ref>;<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>res.average_velocity<sp/>=<sp/>ave_speed;<sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="dist__vel_8cpp_1a9347ed39139710945fc7a33ffc61b133" kindref="member">distance</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>position_x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>position_y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>goal_x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="dist__vel_8cpp_1a86a424410ae6b4f43baca838da5f993b" kindref="member">goal_y</ref>){</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sqrt(pow((goal_x<sp/>-<sp/>position_x),<sp/>2.0)<sp/>+<sp/>pow((<ref refid="dist__vel_8cpp_1a86a424410ae6b4f43baca838da5f993b" kindref="member">goal_y</ref><sp/>-<sp/>position_y),<sp/>2.0));</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="dist__vel_8cpp_1aabb4187e7254c2de55c68763be95b9b0" kindref="member">average_speed</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>v_x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>v_y){</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>sum<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dist__vel_8cpp_1a37f50ca61644027b7cde21c420ca5d5c" kindref="member">velocity_values</ref>[<ref refid="dist__vel_8cpp_1a4b00721003b8d35559a55c9098ff36c5" kindref="member">ind</ref>]<sp/>=<sp/>sqrt(pow(vel_x,<sp/>2.0)<sp/>+<sp/>pow(<ref refid="dist__vel_8cpp_1a1dd0876197a1e2dba35d41d6a6d9eab4" kindref="member">vel_y</ref>,<sp/>2.0));</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dist__vel_8cpp_1a4b00721003b8d35559a55c9098ff36c5" kindref="member">ind</ref><sp/>=<sp/>(<ref refid="dist__vel_8cpp_1a4b00721003b8d35559a55c9098ff36c5" kindref="member">ind</ref><sp/>+<sp/>1)<sp/>%<sp/><ref refid="dist__vel_8cpp_1a16c5403a230f1b66e607eae331f46238" kindref="member">max_values</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="dist__vel_8cpp_1a16c5403a230f1b66e607eae331f46238" kindref="member">max_values</ref>;<sp/>++i)<sp/>{sum<sp/>+=<sp/><ref refid="dist__vel_8cpp_1a37f50ca61644027b7cde21c420ca5d5c" kindref="member">velocity_values</ref>[i];}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(count<sp/>&lt;<sp/><ref refid="dist__vel_8cpp_1a16c5403a230f1b66e607eae331f46238" kindref="member">max_values</ref>)<sp/>{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sum<sp/>/<sp/>(<ref refid="dist__vel_8cpp_1a4b00721003b8d35559a55c9098ff36c5" kindref="member">ind</ref><sp/>+<sp/>1);}<sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sum<sp/>/<sp/><ref refid="dist__vel_8cpp_1a16c5403a230f1b66e607eae331f46238" kindref="member">max_values</ref>;}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dist__vel_8cpp_1a12b48276fb89f0b623f71f6416f1a4bc" kindref="member">target_position</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>assignment_2_2023::PlanningActionGoal::ConstPtr<sp/>&amp;msg){</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>goal_x=msg-&gt;goal.target_pose.pose.position.x;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dist__vel_8cpp_1a86a424410ae6b4f43baca838da5f993b" kindref="member">goal_y</ref>=msg-&gt;goal.target_pose.pose.position.y;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dist__vel_8cpp_1ae8dbc1c603c13591b206477f1d7f6245" kindref="member">dataCallback</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>assignment_2_2023::Posvel::ConstPtr&amp;<sp/>data){</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>position_x<sp/>=<sp/>data-&gt;x;<sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>position_y<sp/>=<sp/>data-&gt;y;<sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>vel_x<sp/>=<sp/>data-&gt;vel_x;<sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dist__vel_8cpp_1a1dd0876197a1e2dba35d41d6a6d9eab4" kindref="member">vel_y</ref><sp/>=<sp/>data-&gt;vel_y;<sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dist__vel_8cpp_1a2578b368dad74bcd4a88bbeeb319a833" kindref="member">dist</ref><sp/>=<sp/><ref refid="dist__vel_8cpp_1a9347ed39139710945fc7a33ffc61b133" kindref="member">distance</ref>(position_x,<sp/>position_y,<sp/>goal_x,<sp/><ref refid="dist__vel_8cpp_1a86a424410ae6b4f43baca838da5f993b" kindref="member">goal_y</ref>);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>ave_speed<sp/>=<sp/><ref refid="dist__vel_8cpp_1aabb4187e7254c2de55c68763be95b9b0" kindref="member">average_speed</ref>(vel_x,<sp/><ref refid="dist__vel_8cpp_1a1dd0876197a1e2dba35d41d6a6d9eab4" kindref="member">vel_y</ref>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>count++;<sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dist__vel_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv){</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::init(argc,<sp/>argv,<sp/></highlight><highlight class="stringliteral">&quot;dist_vel_service&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::NodeHandle<sp/>nh;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::Subscriber<sp/><ref refid="client_8cpp_1a24d694a9a8bf73ee31fe92724886a276" kindref="member">sub</ref><sp/>=<sp/>nh.subscribe(</highlight><highlight class="stringliteral">&quot;/posvel&quot;</highlight><highlight class="normal">,<sp/>1,<sp/><ref refid="dist__vel_8cpp_1ae8dbc1c603c13591b206477f1d7f6245" kindref="member">dataCallback</ref>);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::Subscriber<sp/>sub_goal<sp/>=<sp/>nh.subscribe&lt;assignment_2_2023::PlanningActionGoal&gt;(</highlight><highlight class="stringliteral">&quot;/reaching_goal/goal&quot;</highlight><highlight class="normal">,<sp/>1,<sp/><ref refid="dist__vel_8cpp_1a12b48276fb89f0b623f71f6416f1a4bc" kindref="member">target_position</ref>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::ServiceServer<sp/>service=nh.advertiseService(</highlight><highlight class="stringliteral">&quot;/dist_vel_service&quot;</highlight><highlight class="normal">,<ref refid="dist__vel_8cpp_1a32326bf70de23fa6ecebbba49176b608" kindref="member">send_info</ref>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ros::param::get(</highlight><highlight class="stringliteral">&quot;/dist_vel_service/max_values&quot;</highlight><highlight class="normal">,<sp/><ref refid="dist__vel_8cpp_1a16c5403a230f1b66e607eae331f46238" kindref="member">max_values</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="dist__vel_8cpp_1a16c5403a230f1b66e607eae331f46238" kindref="member">max_values</ref><sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dist__vel_8cpp_1a37f50ca61644027b7cde21c420ca5d5c" kindref="member">velocity_values</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">[<ref refid="dist__vel_8cpp_1a16c5403a230f1b66e607eae331f46238" kindref="member">max_values</ref>];</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_ERROR(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>value<sp/>for<sp/>&apos;averaging_window&apos;.<sp/>It<sp/>should<sp/>be<sp/>a<sp/>positive<sp/>integer.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;<sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_ERROR(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>retrieve<sp/>&apos;averaging_window&apos;<sp/>parameter.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;<sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::spin();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="dist__vel_8cpp_1a37f50ca61644027b7cde21c420ca5d5c" kindref="member">velocity_values</ref>;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/root/my_ros/src/assignment_2_2023/src/dist_vel.cpp"/>
+  </compounddef>
+</doxygen>

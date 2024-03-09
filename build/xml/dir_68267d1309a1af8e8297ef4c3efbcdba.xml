@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>/root/my_ros/src/assignment_2_2023/src</compoundname>
+    <innerfile refid="3962994___alberto___bono__2_8cpp">3962994_Alberto_Bono_2.cpp</innerfile>
+    <innerfile refid="client_8cpp">client.cpp</innerfile>
+    <innerfile refid="clientandservice_8cpp">clientandservice.cpp</innerfile>
+    <innerfile refid="dist__vel_8cpp">dist_vel.cpp</innerfile>
+    <innerfile refid="last__target_8cpp">last_target.cpp</innerfile>
+    <innerfile refid="reachgoals_8cpp">reachgoals.cpp</innerfile>
+    <innerfile refid="_send___goals_8cpp">Send_Goals.cpp</innerfile>
+    <innerfile refid="subscriber_8cpp">subscriber.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/root/my_ros/src/assignment_2_2023/src/"/>
+  </compounddef>
+</doxygen>

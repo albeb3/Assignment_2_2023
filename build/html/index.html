@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to assignment_2_2023’s documentation! &mdash; assignment_2_2023 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=359c27e9"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            assignment_2_2023
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to assignment_2_2023’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a><ul>
+<li><a class="reference internal" href="#assignment-2-2023-documentation">assignment_2_2023 documentation!</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cpp-controller-module-client-cpp">Cpp controller Module (client.cpp)</a></li>
+<li><a class="reference internal" href="#cpp-controller-module-dist-vel-cpp">Cpp controller Module (dist_vel.cpp)</a></li>
+<li><a class="reference internal" href="#cpp-controller-module-last-target-cpp">Cpp controller Module (last_target.cpp)</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">assignment_2_2023</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to assignment_2_2023’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-assignment-2-2023-s-documentation">
+<h1>Welcome to assignment_2_2023’s documentation!<a class="headerlink" href="#welcome-to-assignment-2-2023-s-documentation" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+<section id="assignment-2-2023-documentation">
+<h2>assignment_2_2023 documentation!<a class="headerlink" href="#assignment-2-2023-documentation" title="Permalink to this heading"></a></h2>
+<p>This is the documentation of the assignment_2_2023 package!</p>
+</section>
+</section>
+<section id="cpp-controller-module-client-cpp">
+<h1>Cpp controller Module (client.cpp)<a class="headerlink" href="#cpp-controller-module-client-cpp" title="Permalink to this heading"></a></h1>
+<p>Action Client Node. </p>
+<p><p>Subscribes to:</p>
+<p>/odom Publisher to :</p>
+<p>/posvel SimpleActionClient:</p>
+<p>/reaching_goal</p>
+<dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Alberto Bono 3962994 </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>04/03/2024</p>
+</dd>
+</dl>
+</p>
+<p><p>Description:</p>
+<p>Allows users to set a target (x, y) or cancel it. Utilizes action server feedback/status to determine target achievement. Publishes robot position and velocity as a custom message (x, y, vel_x, vel_z) based on the topic</p>
+<code class="docutils literal notranslate"><span class="pre">/odom</span></code>. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv412odomCallbackRKN8nav_msgs8Odometry8ConstPtrE">
+<span id="_CPPv312odomCallbackRKN8nav_msgs8Odometry8ConstPtrE"></span><span id="_CPPv212odomCallbackRKN8nav_msgs8Odometry8ConstPtrE"></span><span id="odomCallback__nav_msgs::Odometry::ConstPtrCR"></span><span class="target" id="client_8cpp_1ae77e5d68ff0f4892f5154064e8b5e21c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">odomCallback</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">nav_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Odometry</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412odomCallbackRKN8nav_msgs8Odometry8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Callback for the odom subscriber. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg(nav_msgs::Odometry)</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>robot_x, robot_y, robot_vel_x, robot_vel_y </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv49userInputv">
+<span id="_CPPv39userInputv"></span><span id="_CPPv29userInputv"></span><span id="userInput"></span><span class="target" id="client_8cpp_1ae58f973227bed2ce6a22eb4a13f76c32"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">userInput</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49userInputv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function to handle user input for sending goals to a ROS action server. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv44mainiPPc">
+<span id="_CPPv34mainiPPc"></span><span id="_CPPv24mainiPPc"></span><span id="main__i.cPP"></span><span class="target" id="client_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">main</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">argc</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">argv</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44mainiPPc" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Main function thread input_thread and publish posvel. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv47robot_x">
+<span id="_CPPv37robot_x"></span><span id="_CPPv27robot_x"></span><span id="robot_x__float"></span><span class="target" id="client_8cpp_1a94f98c123703f2950c9a529dd67ca5c5"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">robot_x</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv47robot_x" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv47robot_y">
+<span id="_CPPv37robot_y"></span><span id="_CPPv27robot_y"></span><span id="robot_y__float"></span><span class="target" id="client_8cpp_1ad10724c6ea6f6012098ff6267f6ffb65"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">robot_y</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv47robot_y" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv411robot_vel_x">
+<span id="_CPPv311robot_vel_x"></span><span id="_CPPv211robot_vel_x"></span><span id="robot_vel_x__float"></span><span class="target" id="client_8cpp_1a553f2ddbab1dcbd0ffc57accd39fdf6e"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">robot_vel_x</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv411robot_vel_x" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv411robot_vel_y">
+<span id="_CPPv311robot_vel_y"></span><span id="_CPPv211robot_vel_y"></span><span id="robot_vel_y__float"></span><span class="target" id="client_8cpp_1aa129247dd6d09f9b30291a8c786aa9b5"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">robot_vel_y</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv411robot_vel_y" title="Permalink to this definition"></a><br /></dt>
+<dd><p>variables for robot position and robot speed </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv44busy">
+<span id="_CPPv34busy"></span><span id="_CPPv24busy"></span><span id="busy__b"></span><span class="target" id="client_8cpp_1abbe792bb2cf67584b86443440a194f46"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">busy</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv44busy" title="Permalink to this definition"></a><br /></dt>
+<dd><p>variable for managing the condition block </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv413pos_publisher">
+<span id="_CPPv313pos_publisher"></span><span id="_CPPv213pos_publisher"></span><span id="pos_publisher__ros::Publisher"></span><span class="target" id="client_8cpp_1ac212754f62baf34f3f6f79651a577733"></span><span class="n"><span class="pre">ros</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Publisher</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pos_publisher</span></span></span><a class="headerlink" href="#_CPPv413pos_publisher" title="Permalink to this definition"></a><br /></dt>
+<dd><p>publisher for position and speed of robot </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv43sub">
+<span id="_CPPv33sub"></span><span id="_CPPv23sub"></span><span id="sub__ros::Subscriber"></span><span class="target" id="client_8cpp_1a24d694a9a8bf73ee31fe92724886a276"></span><span class="n"><span class="pre">ros</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Subscriber</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sub</span></span></span><a class="headerlink" href="#_CPPv43sub" title="Permalink to this definition"></a><br /></dt>
+<dd><p>subscriber for position and speed of robot from odom </p>
+</dd></dl>
+
+</div>
+</section>
+<section id="cpp-controller-module-dist-vel-cpp">
+<h1>Cpp controller Module (dist_vel.cpp)<a class="headerlink" href="#cpp-controller-module-dist-vel-cpp" title="Permalink to this heading"></a></h1>
+<p>Service Node. </p>
+<p><p>Subscribes to:</p>
+<p>/posvel /reaching_goal/goal</p>
+<dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Alberto Bono 3962994 </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>04/03/2024</p>
+</dd>
+</dl>
+</p>
+<p><p>Server:</p>
+<p>/dist_vel_service</p>
+</p>
+<p><p>Description:</p>
+<p>Subscribes to robot position and velocity through a custom message. Computes the distance from the target and the robot’s average speed. Parameterized with the averaging window size for speed calculations.</p>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv49send_infoRN17assignment_2_20238Dist_vel7RequestERN17assignment_2_20238Dist_vel8ResponseE">
+<span id="_CPPv39send_infoRN17assignment_2_20238Dist_vel7RequestERN17assignment_2_20238Dist_vel8ResponseE"></span><span id="_CPPv29send_infoRN17assignment_2_20238Dist_vel7RequestERN17assignment_2_20238Dist_vel8ResponseE"></span><span id="send_info__assignment_2_2023::Dist_vel::RequestR.assignment_2_2023::Dist_vel::ResponseR"></span><span class="target" id="dist__vel_8cpp_1a32326bf70de23fa6ecebbba49176b608"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">send_info</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">assignment_2_2023</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Dist_vel</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Request</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">req</span></span>, <span class="n"><span class="pre">assignment_2_2023</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Dist_vel</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Response</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49send_infoRN17assignment_2_20238Dist_vel7RequestERN17assignment_2_20238Dist_vel8ResponseE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Service Function to Send Distance and Average Velocity Information. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>req(assignment_2_2023::Dist_vel::Request), res(assignment_2_2023::Dist_vel::Response)</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv48distanceffff">
+<span id="_CPPv38distanceffff"></span><span id="_CPPv28distanceffff"></span><span id="distance__float.float.float.float"></span><span class="target" id="dist__vel_8cpp_1a9347ed39139710945fc7a33ffc61b133"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">distance</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">position_x</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">position_y</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">goal_x</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">goal_y</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48distanceffff" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Auxiliary function to calculate the distance between two points. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>position_x</strong> – position_y goal_x goal_y </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>distance between target and position of the robot </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv413average_speedff">
+<span id="_CPPv313average_speedff"></span><span id="_CPPv213average_speedff"></span><span id="average_speed__float.float"></span><span class="target" id="dist__vel_8cpp_1aabb4187e7254c2de55c68763be95b9b0"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">average_speed</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v_x</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v_y</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413average_speedff" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Auxiliary function to calculate the average speed of a robot based on an array of dim elements. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>v_x, v_y</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>average speed </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415target_positionRKN17assignment_2_202318PlanningActionGoal8ConstPtrE">
+<span id="_CPPv315target_positionRKN17assignment_2_202318PlanningActionGoal8ConstPtrE"></span><span id="_CPPv215target_positionRKN17assignment_2_202318PlanningActionGoal8ConstPtrE"></span><span id="target_position__assignment_2_2023::PlanningActionGoal::ConstPtrCR"></span><span class="target" id="dist__vel_8cpp_1a12b48276fb89f0b623f71f6416f1a4bc"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">target_position</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">assignment_2_2023</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">PlanningActionGoal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415target_positionRKN17assignment_2_202318PlanningActionGoal8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Callback of sub subscriber receives PlanningActionGoal message from /reaching_goal/goal topic which fills the global variables for the target position. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg(assignment_2_2023::PlanningActionGoal)</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv412dataCallbackRKN17assignment_2_20236Posvel8ConstPtrE">
+<span id="_CPPv312dataCallbackRKN17assignment_2_20236Posvel8ConstPtrE"></span><span id="_CPPv212dataCallbackRKN17assignment_2_20236Posvel8ConstPtrE"></span><span id="dataCallback__assignment_2_2023::Posvel::ConstPtrCR"></span><span class="target" id="dist__vel_8cpp_1ae8dbc1c603c13591b206477f1d7f6245"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dataCallback</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">assignment_2_2023</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Posvel</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412dataCallbackRKN17assignment_2_20236Posvel8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Callback for Monitoring Robot Position and Velocity Information. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data(assignment_2_2023::Posvel)</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="dist__vel_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">main</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">argc</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">argv</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Main function that manage the speed array dimension from parameter sent from launch file. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv410max_values">
+<span id="_CPPv310max_values"></span><span id="_CPPv210max_values"></span><span id="max_values__i"></span><span class="target" id="dist__vel_8cpp_1a16c5403a230f1b66e607eae331f46238"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_values</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv410max_values" title="Permalink to this definition"></a><br /></dt>
+<dd><p>variables for the dimension of the array for handling the average speed and its dimension taken as a parameter </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv415velocity_values">
+<span id="_CPPv315velocity_values"></span><span id="_CPPv215velocity_values"></span><span id="velocity_values__floatP"></span><span class="target" id="dist__vel_8cpp_1a37f50ca61644027b7cde21c420ca5d5c"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">velocity_values</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><a class="headerlink" href="#_CPPv415velocity_values" title="Permalink to this definition"></a><br /></dt>
+<dd><p>variables for the array for handling the average speed */ </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv46goal_x">
+<span id="_CPPv36goal_x"></span><span id="_CPPv26goal_x"></span><span id="goal_x__float"></span><span class="target" id="dist__vel_8cpp_1ac0df33c619e3c146b6f892ec65219336"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">goal_x</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv46goal_x" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv46goal_y">
+<span id="_CPPv36goal_y"></span><span id="_CPPv26goal_y"></span><span id="goal_y__float"></span><span class="target" id="dist__vel_8cpp_1a86a424410ae6b4f43baca838da5f993b"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">goal_y</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv46goal_y" title="Permalink to this definition"></a><br /></dt>
+<dd><p>variables for the target position </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv410position_x">
+<span id="_CPPv310position_x"></span><span id="_CPPv210position_x"></span><span id="position_x__float"></span><span class="target" id="dist__vel_8cpp_1a23b231f4f8af79d2071b60cbacebfc99"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">position_x</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv410position_x" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv410position_y">
+<span id="_CPPv310position_y"></span><span id="_CPPv210position_y"></span><span id="position_y__float"></span><span class="target" id="dist__vel_8cpp_1af31f30f5c4fab9afb7dedf677d53104b"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">position_y</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv410position_y" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv45vel_x">
+<span id="_CPPv35vel_x"></span><span id="_CPPv25vel_x"></span><span id="vel_x__float"></span><span class="target" id="dist__vel_8cpp_1a4b312b3530217eb51cbad6e930610f6b"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vel_x</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv45vel_x" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv45vel_y">
+<span id="_CPPv35vel_y"></span><span id="_CPPv25vel_y"></span><span id="vel_y__float"></span><span class="target" id="dist__vel_8cpp_1a1dd0876197a1e2dba35d41d6a6d9eab4"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vel_y</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv45vel_y" title="Permalink to this definition"></a><br /></dt>
+<dd><p>variables for the robot position and the robot speed </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv49ave_speed">
+<span id="_CPPv39ave_speed"></span><span id="_CPPv29ave_speed"></span><span id="ave_speed__float"></span><span class="target" id="dist__vel_8cpp_1a379a54da91b0270aa821ef254e52ff5b"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ave_speed</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv49ave_speed" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv44dist">
+<span id="_CPPv34dist"></span><span id="_CPPv24dist"></span><span id="dist__float"></span><span class="target" id="dist__vel_8cpp_1a2578b368dad74bcd4a88bbeeb319a833"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dist</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv44dist" title="Permalink to this definition"></a><br /></dt>
+<dd><p>variables for the robot distance from the target and the robot average speed </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv45count">
+<span id="_CPPv35count"></span><span id="_CPPv25count"></span><span id="count__i"></span><span class="target" id="dist__vel_8cpp_1ad43c3812e6d13e0518d9f8b8f463ffcf"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">count</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv45count" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv43ind">
+<span id="_CPPv33ind"></span><span id="_CPPv23ind"></span><span id="ind__i"></span><span class="target" id="dist__vel_8cpp_1a4b00721003b8d35559a55c9098ff36c5"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ind</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv43ind" title="Permalink to this definition"></a><br /></dt>
+<dd><p>variables for manage the code </p>
+</dd></dl>
+
+</div>
+</section>
+<section id="cpp-controller-module-last-target-cpp">
+<h1>Cpp controller Module (last_target.cpp)<a class="headerlink" href="#cpp-controller-module-last-target-cpp" title="Permalink to this heading"></a></h1>
+<p>Service Node. </p>
+<p><p>Subscribes to:</p>
+<p>/reaching_goal/goal</p>
+<dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Alberto Bono 3962994 </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>04/03/2024</p>
+</dd>
+</dl>
+</p>
+<p><p>Server:</p>
+<p>/last_target_service</p>
+</p>
+<p><p>Description:</p>
+<p>When called, returns the coordinates of the last target set by the user.</p>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="last__target_8cpp_1a12b48276fb89f0b623f71f6416f1a4bc"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">target_position</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">assignment_2_2023</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">PlanningActionGoal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Callback for the reaching_goal/goal subscriber. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg(assignment_2_2023::PlanningActionGoal)</strong> – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>x,y (target position) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv413send_positionRN17assignment_2_202311Last_target7RequestERN17assignment_2_202311Last_target8ResponseE">
+<span id="_CPPv313send_positionRN17assignment_2_202311Last_target7RequestERN17assignment_2_202311Last_target8ResponseE"></span><span id="_CPPv213send_positionRN17assignment_2_202311Last_target7RequestERN17assignment_2_202311Last_target8ResponseE"></span><span id="send_position__assignment_2_2023::Last_target::RequestR.assignment_2_2023::Last_target::ResponseR"></span><span class="target" id="last__target_8cpp_1a1c45d32d1b7eb0113ef181e721dd52c9"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">send_position</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">assignment_2_2023</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Last_target</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Request</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">req</span></span>, <span class="n"><span class="pre">assignment_2_2023</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Last_target</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Response</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413send_positionRN17assignment_2_202311Last_target7RequestERN17assignment_2_202311Last_target8ResponseE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Service callback: fills the response message of the goal position with the values of the variables coming from target_position. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>req(assignment_2_2023::Last_target::Request), res(assignment_2_2023::Last_target::Response)</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="last__target_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">main</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">argc</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">argv</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv41x">
+<span id="_CPPv31x"></span><span id="_CPPv21x"></span><span id="x__float"></span><span class="target" id="last__target_8cpp_1ad0da36b2558901e21e7a30f6c227a45e"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">x</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv41x" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv41y">
+<span id="_CPPv31y"></span><span id="_CPPv21y"></span><span id="y__float"></span><span class="target" id="last__target_8cpp_1aa4f0d3eebc3c443f9be81bf48561a217"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">y</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv41y" title="Permalink to this definition"></a><br /></dt>
+<dd><p>variables for the target position </p>
+</dd></dl>
+
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Alberto Bono s3962994@studenti.unige.it.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

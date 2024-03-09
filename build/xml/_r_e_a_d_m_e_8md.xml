@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Research<sp/>track-<sp/>Assignment<sp/>2</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>repository<sp/>contains<sp/>a<sp/>set<sp/>of<sp/>ROS<sp/>nodes<sp/>designed<sp/>to<sp/>accomplish<sp/>specific<sp/>tasks<sp/>within<sp/>a<sp/>robot<sp/>simulation<sp/>environment.<sp/>The<sp/>implementation<sp/>fulfills<sp/>the<sp/>following<sp/>requirements:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Task<sp/>Description</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Node<sp/>1:<sp/>Action<sp/>Client<sp/>Node</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Functionality:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Allows<sp/>users<sp/>to<sp/>set<sp/>a<sp/>target<sp/>(x,<sp/>y)<sp/>or<sp/>cancel<sp/>it.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Utilizes<sp/>action<sp/>server<sp/>feedback/status<sp/>to<sp/>determine<sp/>target<sp/>achievement.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Publishes<sp/>robot<sp/>position<sp/>and<sp/>velocity<sp/>as<sp/>a<sp/>custom<sp/>message<sp/>(x,<sp/>y,<sp/>vel_x,<sp/>vel_z)<sp/>based<sp/>on<sp/>the<sp/>topic<sp/>`/odom`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Node<sp/>2:<sp/>Service<sp/>Node<sp/>(Retrieve<sp/>Last<sp/>Target<sp/>Coordinates)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Functionality:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>When<sp/>called,<sp/>returns<sp/>the<sp/>coordinates<sp/>of<sp/>the<sp/>last<sp/>target<sp/>set<sp/>by<sp/>the<sp/>user.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Node<sp/>3:<sp/>Service<sp/>Node<sp/>(Robot&apos;s<sp/>Distance<sp/>&amp;<sp/>Average<sp/>Speed)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Functionality:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Subscribes<sp/>to<sp/>robot<sp/>position<sp/>and<sp/>velocity<sp/>through<sp/>a<sp/>custom<sp/>message.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Computes<sp/>the<sp/>distance<sp/>from<sp/>the<sp/>target<sp/>and<sp/>the<sp/>robot&apos;s<sp/>average<sp/>speed.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Parameterized<sp/>with<sp/>the<sp/>averaging<sp/>window<sp/>size<sp/>for<sp/>speed<sp/>calculations.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Launch<sp/>File</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Orchestrates<sp/>the<sp/>execution<sp/>of<sp/>all<sp/>three<sp/>nodes.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Configures<sp/>the<sp/>parameter<sp/>for<sp/>the<sp/>third<sp/>node<sp/>to<sp/>determine<sp/>the<sp/>averaging<sp/>window<sp/>size<sp/>for<sp/>speed<sp/>calculation.</highlight></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>run<sp/>the<sp/>project,<sp/>follow<sp/>these<sp/>steps:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>**Clone<sp/>this<sp/>repository<sp/>to<sp/>your<sp/>system.**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```bash</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>git<sp/>clone<sp/>https://github.com/albeb3/Assignment_2_2023.git</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>**Install<sp/>the<sp/>necessary<sp/>dependencies<sp/>by<sp/>running<sp/>`catkin_make`.**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3.<sp/>**Launch<sp/>the<sp/>main<sp/>node<sp/>using<sp/>the<sp/>provided<sp/>launch<sp/>file:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```bash</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>roslaunch<sp/>assignment_2_2023<sp/>assignment2.launch</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">4.<sp/>**To<sp/>use<sp/>the<sp/>service,<sp/>execute:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```bash</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rosservice<sp/>call<sp/>/dist_vel_service</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rosservice<sp/>call<sp/>/last_target_service</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Node<sp/>1:<sp/>Action<sp/>Client<sp/>Node<sp/>(`client.cpp`)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Language<sp/>and<sp/>Files:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Implemented<sp/>in<sp/>C++.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Located<sp/>in<sp/>the<sp/>`src`<sp/>folder<sp/>named<sp/>`client.cpp`.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Utilizes<sp/>a<sp/>message<sp/>file<sp/>named<sp/>`Posvel.h`,<sp/>containing<sp/>fields<sp/>`x`,<sp/>`y`,<sp/>`vel_x`,<sp/>and<sp/>`vel_y`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Message<sp/>Structure:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Created<sp/>a<sp/>custom<sp/>message<sp/>file<sp/>(`Posvel.h`)<sp/>with<sp/>`float64`<sp/>fields<sp/>(`x`,<sp/>`y`,<sp/>`vel_x`,<sp/>and<sp/>`vel_y`).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>decision<sp/>to<sp/>use<sp/>`vel_y`<sp/>instead<sp/>of<sp/>`vel_z`<sp/>was<sp/>made<sp/>for<sp/>coherence<sp/>with<sp/>the<sp/>third<sp/>node&apos;s<sp/>requirement<sp/>for<sp/>calculating<sp/>average<sp/>speed,<sp/>ensuring<sp/>consistency<sp/>within<sp/>the<sp/>system&apos;s<sp/>data<sp/>structure.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Initialization:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Initializes<sp/>a<sp/>ROS<sp/>node,<sp/>sets<sp/>up<sp/>a<sp/>publisher<sp/>to<sp/>send<sp/>information<sp/>using<sp/>the<sp/>custom<sp/>message,<sp/>and<sp/>subscribes<sp/>to<sp/>the<sp/>`/odom`<sp/>topic<sp/>via<sp/>the<sp/>`odomCallback`<sp/>function<sp/>to<sp/>gather<sp/>robot<sp/>position<sp/>and<sp/>velocity<sp/>data.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Utilizes<sp/>`std::thread`<sp/>functionality<sp/>to<sp/>enable<sp/>continuous<sp/>transmission<sp/>by<sp/>the<sp/>publisher<sp/>while<sp/>allowing<sp/>user<sp/>interaction<sp/>without<sp/>blocking<sp/>the<sp/>execution.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Functionality:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Target<sp/>Handling:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Initializes<sp/>a<sp/>`busy`<sp/>variable<sp/>as<sp/>`false`.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Prompts<sp/>the<sp/>user<sp/>to<sp/>input<sp/>target/goal<sp/>coordinates<sp/>initially.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Changes<sp/>`busy`<sp/>to<sp/>`true`<sp/>after<sp/>acquiring<sp/>the<sp/>target<sp/>coordinates.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**User<sp/>Interaction:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Based<sp/>on<sp/>the<sp/>`busy`<sp/>state,<sp/>prompts<sp/>the<sp/>user<sp/>to<sp/>either<sp/>cancel<sp/>the<sp/>goal<sp/>or<sp/>check<sp/>if<sp/>the<sp/>goal<sp/>has<sp/>been<sp/>reached.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Goal<sp/>Transmission:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>After<sp/>populating<sp/>the<sp/>goal<sp/>field<sp/>of<sp/>the<sp/>action<sp/>message<sp/>with<sp/>the<sp/>target<sp/>coordinates,<sp/>the<sp/>client<sp/>sends<sp/>this<sp/>data<sp/>using<sp/>the<sp/>`sendGoal()`<sp/>functionality<sp/>to<sp/>the<sp/>server.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Goal<sp/>Status<sp/>Check:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Implements<sp/>code<sp/>to<sp/>request<sp/>the<sp/>server&apos;s<sp/>goal<sp/>status<sp/>using<sp/>the<sp/>`getState`<sp/>functionality<sp/>when<sp/>the<sp/>user<sp/>checks<sp/>if<sp/>the<sp/>goal<sp/>is<sp/>reached.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Node<sp/>2:<sp/>Service<sp/>Node<sp/>(`last_target.cpp`)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Language<sp/>and<sp/>Files:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Implemented<sp/>in<sp/>C++.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Located<sp/>in<sp/>the<sp/>`src`<sp/>folder<sp/>named<sp/>`last_target.cpp`.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Utilizes<sp/>a<sp/>service<sp/>file<sp/>(`.srv`)<sp/>containing<sp/>a<sp/>response<sp/>with<sp/>two<sp/>`float32`<sp/>fields:<sp/>`goal_x`<sp/>and<sp/>`goal_y`,<sp/>without<sp/>a<sp/>request<sp/>field.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Service<sp/>Structure:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Created<sp/>a<sp/>service<sp/>file<sp/>defining<sp/>the<sp/>service<sp/>structure<sp/>without<sp/>a<sp/>request<sp/>but<sp/>containing<sp/>`goal_x`<sp/>and<sp/>`goal_y`<sp/>as<sp/>response<sp/>fields<sp/>of<sp/>type<sp/>`float32`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Initialization:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Initializes<sp/>the<sp/>`last_target_service`<sp/>node.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sets<sp/>up<sp/>a<sp/>subscriber<sp/>to<sp/>listen<sp/>to<sp/>the<sp/>`/reaching_goal/goal`<sp/>topic,<sp/>extracting<sp/>goal<sp/>coordinates<sp/>using<sp/>the<sp/>`target_position`<sp/>callback<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Service<sp/>Server:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Establishes<sp/>a<sp/>`ServiceServer`<sp/>named<sp/>`/last_target_service`<sp/>to<sp/>respond<sp/>to<sp/>service<sp/>requests.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Implements<sp/>the<sp/>`send_position`<sp/>function,<sp/>retrieving<sp/>and<sp/>returning<sp/>the<sp/>last<sp/>goal&apos;s<sp/>coordinates<sp/>upon<sp/>service<sp/>request.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Observations:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>`target_position`<sp/>callback<sp/>captures<sp/>goal<sp/>coordinates<sp/>upon<sp/>receiving<sp/>messages<sp/>from<sp/>the<sp/>`/reaching_goal/goal`<sp/>topic.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>`send_position`<sp/>function<sp/>responds<sp/>to<sp/>service<sp/>requests<sp/>on<sp/>`/last_target_service`<sp/>by<sp/>providing<sp/>the<sp/>last<sp/>received<sp/>goal&apos;s<sp/>coordinates.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Node<sp/>3:<sp/>Service<sp/>Node<sp/>(`dist_vel.cpp`)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**File<sp/>Structure:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Implemented<sp/>in<sp/>C++.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Located<sp/>in<sp/>`src`<sp/>folder<sp/>as<sp/>`dist_vel.cpp`.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Utilizes<sp/>a<sp/>custom<sp/>`.srv`<sp/>file<sp/>named<sp/>`Dist_vel`<sp/>located<sp/>in<sp/>the<sp/>`srv`<sp/>folder.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Service<sp/>Structure:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>The<sp/>`Dist_vel`<sp/>service<sp/>file<sp/>defines<sp/>the<sp/>service<sp/>structure<sp/>without<sp/>a<sp/>request<sp/>but<sp/>containing<sp/>the<sp/>distance<sp/>from<sp/>the<sp/>goal<sp/>and<sp/>the<sp/>robot&apos;s<sp/>average<sp/>speed<sp/>as<sp/>response<sp/>fields<sp/>of<sp/>type<sp/>`float32`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Initialization:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Initializes<sp/>two<sp/>subscribers:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Subscribes<sp/>to<sp/>`/reaching_goal/goal`<sp/>to<sp/>obtain<sp/>target<sp/>coordinates<sp/>via<sp/>the<sp/>`target_position`<sp/>callback.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Subscribes<sp/>to<sp/>`/posvel`<sp/>to<sp/>retrieve<sp/>robot&apos;s<sp/>coordinates<sp/>and<sp/>velocity<sp/>using<sp/>`dataCallback`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Functionality:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**`target_position`<sp/>Callback:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Extracts<sp/>and<sp/>stores<sp/>the<sp/>goal&apos;s<sp/>coordinates<sp/>in<sp/>`goal_x`<sp/>and<sp/>`goal_y`<sp/>variables.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**`dataCallback`<sp/>Function:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Gathers<sp/>robot&apos;s<sp/>coordinates<sp/>(position_x,<sp/>position_y)<sp/>and<sp/>velocity<sp/>(vel_x,<sp/>vel_y).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Utilizes<sp/>two<sp/>functions<sp/>inside<sp/>this<sp/>callback:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Calculates<sp/>the<sp/>distance<sp/>between<sp/>the<sp/>robot<sp/>and<sp/>the<sp/>goal.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Computes<sp/>the<sp/>average<sp/>speed<sp/>based<sp/>on<sp/>a<sp/>vector<sp/>with<sp/>a<sp/>dimension<sp/>set<sp/>by<sp/>`get:param`<sp/>from<sp/>the<sp/>launch<sp/>file.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Average<sp/>Speed<sp/>Calculation:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Utilizes<sp/>a<sp/>vector<sp/>to<sp/>store<sp/>the<sp/>velocity<sp/>values<sp/>obtained<sp/>from<sp/>the<sp/>callback.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Implements<sp/>counters<sp/>for<sp/>managing<sp/>vector<sp/>updates<sp/>with<sp/>the<sp/>modulo<sp/>operator.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Calculates<sp/>the<sp/>average<sp/>speed<sp/>by<sp/>summing<sp/>up<sp/>values<sp/>in<sp/>the<sp/>array<sp/>and<sp/>dividing<sp/>by<sp/>the<sp/>total<sp/>number<sp/>of<sp/>values.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**ServiceServer:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Establishes<sp/>`/dist_vel_service`<sp/>as<sp/>a<sp/>`ServiceServer`<sp/>to<sp/>retrieve<sp/>average<sp/>speed<sp/>and<sp/>distance<sp/>from<sp/>the<sp/>goal.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>The<sp/>`send_info`<sp/>function<sp/>populates<sp/>the<sp/>fields<sp/>of<sp/>the<sp/>`Dist_vel`<sp/>service<sp/>message<sp/>with<sp/>velocity<sp/>and<sp/>distance<sp/>values<sp/>obtained<sp/>from<sp/>`dataCallback`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">![rosrun<sp/>rqt_graph<sp/>rqt_graph](https://github.com/albeb3/Assignment_2_2023/blob/main/nodiassignment%20RT.jpg)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Pseudochode<sp/>Node<sp/>1<sp/>(Action<sp/>Client<sp/>Node<sp/>`client.cpp`)</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>ROS<sp/>Node<sp/>-<sp/>Goal<sp/>Sender</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Initialization</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Create<sp/>ROS<sp/>publisher<sp/>for<sp/>position<sp/>and<sp/>speed<sp/>of<sp/>the<sp/>robot</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Create<sp/>ROS<sp/>subscriber<sp/>for<sp/>Odometry<sp/>messages</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Create<sp/>an<sp/>action<sp/>client<sp/>for<sp/>the<sp/>PlanningAction</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Create<sp/>a<sp/>thread<sp/>for<sp/>user<sp/>input</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>UserInput<sp/>Thread</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>While<sp/>ROS<sp/>is<sp/>okay<sp/>and<sp/>not<sp/>shutting<sp/>down:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>If<sp/>the<sp/>action<sp/>has<sp/>finished<sp/>and<sp/>the<sp/>robot<sp/>is<sp/>busy:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Get<sp/>and<sp/>print<sp/>the<sp/>action<sp/>status</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Set<sp/>busy<sp/>to<sp/>false</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Else<sp/>if<sp/>the<sp/>robot<sp/>is<sp/>not<sp/>busy:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Display<sp/>a<sp/>prompt<sp/>to<sp/>insert<sp/>the<sp/>goal<sp/>coordinates<sp/>(x,<sp/>y)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Read<sp/>and<sp/>validate<sp/>user<sp/>input<sp/>for<sp/>x<sp/>coordinate</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Read<sp/>and<sp/>validate<sp/>user<sp/>input<sp/>for<sp/>y<sp/>coordinate</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Display<sp/>a<sp/>message<sp/>indicating<sp/>the<sp/>goal<sp/>is<sp/>being<sp/>sent</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Send<sp/>the<sp/>goal<sp/>using<sp/>the<sp/>action<sp/>client</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Set<sp/>busy<sp/>to<sp/>true</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Else<sp/>if<sp/>the<sp/>robot<sp/>is<sp/>busy:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Display<sp/>options<sp/>to<sp/>the<sp/>user<sp/>(cancel<sp/>goal,<sp/>check<sp/>goal)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Read<sp/>user<sp/>input</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>If<sp/>user<sp/>chooses<sp/>to<sp/>cancel<sp/>goal:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Cancel<sp/>the<sp/>goal<sp/>using<sp/>the<sp/>action<sp/>client</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Display<sp/>a<sp/>message<sp/>indicating<sp/>the<sp/>goal<sp/>is<sp/>canceled</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Set<sp/>busy<sp/>to<sp/>false</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Else<sp/>if<sp/>user<sp/>chooses<sp/>to<sp/>check<sp/>goal:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Display<sp/>a<sp/>message<sp/>indicating<sp/>to<sp/>wait<sp/>for<sp/>the<sp/>result<sp/>and<sp/>try<sp/>again</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Main<sp/>Loop</highlight></codeline>
+<codeline><highlight class="normal">6.<sp/>While<sp/>ROS<sp/>is<sp/>okay:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Create<sp/>Posvel<sp/>message</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Populate<sp/>the<sp/>message<sp/>with<sp/>robot<sp/>position<sp/>and<sp/>speed</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Publish<sp/>the<sp/>message</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>End</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="/root/my_ros/src/assignment_2_2023/README.md"/>
+  </compounddef>
+</doxygen>

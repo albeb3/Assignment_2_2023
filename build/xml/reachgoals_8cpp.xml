@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="reachgoals_8cpp" kind="file" language="C++">
+    <compoundname>reachgoals.cpp</compoundname>
+    <includes local="no">ros/ros.h</includes>
+    <includes local="no">actionlib/client/simple_action_client.h</includes>
+    <includes local="no">assignment_2_2023/PlanningAction.h</includes>
+    <includes local="no">geometry_msgs/Point.h</includes>
+    <includes local="no">geometry_msgs/Pose.h</includes>
+    <includes local="no">geometry_msgs/Twist.h</includes>
+    <includes local="no">nav_msgs/Odometry.h</includes>
+    <includes local="no">assignment_2_2023/PosGoal.h</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">thread</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>nav_msgs/Odometry.h</label>
+      </node>
+      <node id="4">
+        <label>assignment_2_2023/PlanningAction.h</label>
+      </node>
+      <node id="5">
+        <label>geometry_msgs/Point.h</label>
+      </node>
+      <node id="9">
+        <label>assignment_2_2023/PosGoal.h</label>
+      </node>
+      <node id="7">
+        <label>geometry_msgs/Twist.h</label>
+      </node>
+      <node id="6">
+        <label>geometry_msgs/Pose.h</label>
+      </node>
+      <node id="3">
+        <label>actionlib/client/simple_action_client.h</label>
+      </node>
+      <node id="2">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="10">
+        <label>iostream</label>
+      </node>
+      <node id="1">
+        <label>/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp</label>
+        <link refid="reachgoals_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>thread</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="reachgoals_8cpp_1a79c4eb134725be30665a0960c404c9bf" prot="public" static="no" mutable="no">
+        <type>assignment_2_2023::PosGoal</type>
+        <definition>assignment_2_2023::PosGoal pos_goal</definition>
+        <argsstring></argsstring>
+        <name>pos_goal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" line="13" column="28" bodyfile="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="reachgoals_8cpp_1a821282c3fbd7714d8302538a5a674885" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ROWS</definition>
+        <argsstring></argsstring>
+        <name>ROWS</name>
+        <initializer>=2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" line="15" column="11" bodyfile="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="reachgoals_8cpp_1abfdc2552f8ab882b4380b2a56cdff54f" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int COLS</definition>
+        <argsstring></argsstring>
+        <name>COLS</name>
+        <initializer>=5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" line="16" column="11" bodyfile="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="reachgoals_8cpp_1aa1e40c99cd5094407c34cc8c1cd9cd6d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float pos_goals[ROWS][COLS]</definition>
+        <argsstring>[ROWS][COLS]</argsstring>
+        <name>pos_goals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" line="17" column="7" bodyfile="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="reachgoals_8cpp_1ac0df33c619e3c146b6f892ec65219336" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float goal_x</definition>
+        <argsstring></argsstring>
+        <name>goal_x</name>
+        <initializer>=0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" line="19" column="7" bodyfile="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="reachgoals_8cpp_1a86a424410ae6b4f43baca838da5f993b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float goal_y</definition>
+        <argsstring></argsstring>
+        <name>goal_y</name>
+        <initializer>=0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" line="20" column="7" bodyfile="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="reachgoals_8cpp_1acb559820d9ca11295b4500f179ef6392" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int i</definition>
+        <argsstring></argsstring>
+        <name>i</name>
+        <initializer>=0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" line="21" column="5" bodyfile="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="reachgoals_8cpp_1a37d972ae0b47b9099e30983131d31916" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int j</definition>
+        <argsstring></argsstring>
+        <name>j</name>
+        <initializer>=0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" line="22" column="5" bodyfile="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="reachgoals_8cpp_1a2a29c2609082b1d1922f522ada47d343" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void posgoalCallback</definition>
+        <argsstring>(const assignment_2_2023::PosGoal::ConstPtr &amp;msg)</argsstring>
+        <name>posgoalCallback</name>
+        <param>
+          <type>const assignment_2_2023::PosGoal::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" line="23" column="6" bodyfile="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" bodystart="23" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="reachgoals_8cpp_1adad0969fb69e0da0cbda9bed38c57cee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SendingCoordinate</definition>
+        <argsstring>()</argsstring>
+        <name>SendingCoordinate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" line="39" column="6" bodyfile="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" bodystart="39" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="reachgoals_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" line="76" column="5" bodyfile="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp" bodystart="76" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;ros/ros.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;actionlib/client/simple_action_client.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assignment_2_2023/PlanningAction.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;geometry_msgs/Point.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;geometry_msgs/Pose.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;geometry_msgs/Twist.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nav_msgs/Odometry.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assignment_2_2023/PosGoal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;actionlib/client/simple_action_client.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//ros::Publisher<sp/>pos_publisher;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">assignment_2_2023::PosGoal<sp/>pos_goal;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ROWS=2;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>COLS=5;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>pos_goals[ROWS][COLS];</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>goal_x=0.0;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="dist__vel_8cpp_1a86a424410ae6b4f43baca838da5f993b" kindref="member">goal_y</ref>=0.0;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j=0;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>posgoalCallback(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>assignment_2_2023::PosGoal::ConstPtr<sp/>&amp;msg)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(i&lt;COLS){</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos_goals[0][i]<sp/>=<sp/>msg-&gt;goal_x;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos_goals[1][i]<sp/>=<sp/>msg-&gt;goal_y;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;pos<sp/>subscriber@[%f<sp/>%f<sp/>]&quot;</highlight><highlight class="normal">,<sp/>pos_goals[0][i],<sp/>pos_goals[1][i]);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SendingCoordinate()<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>actionlib::SimpleActionClient&lt;assignment_2_2023::PlanningAction&gt;<sp/>client(</highlight><highlight class="stringliteral">&quot;/reaching_goal&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Waiting<sp/>for<sp/>action<sp/>server<sp/>to<sp/>start...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>client.waitForServer();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Action<sp/>server<sp/>started!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(ros::ok()<sp/>&amp;&amp;<sp/>!ros::isShuttingDown())<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ros::Rate<sp/>rate(0.5);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>actionlib::SimpleClientGoalState<sp/>state<sp/>=<sp/>client.getState();</highlight><highlight class="comment">//receive<sp/>the<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assignment_2_2023::PlanningGoal<sp/>goal;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Action<sp/>finished:<sp/>%s<sp/>\n&quot;</highlight><highlight class="normal">,state.toString().c_str());</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(strcmp(state.toString().c_str(),<sp/></highlight><highlight class="stringliteral">&quot;LOST&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0){</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.target_pose.pose.position.x<sp/>=pos_goals[0][0];</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.target_pose.pose.position.y<sp/>=pos_goals[1][0];</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>client.sendGoal(goal);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>j++;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(state.toString().c_str(),<sp/></highlight><highlight class="stringliteral">&quot;SUCCEEDED&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0){</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.target_pose.pose.position.x<sp/>=pos_goals[0][j];</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.target_pose.pose.position.y<sp/>=pos_goals[1][j];</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>client.sendGoal(goal);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>j++;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>rate.sleep();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="client_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv)<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::init(argc,<sp/>argv,<sp/></highlight><highlight class="stringliteral">&quot;reach_goals_node&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::NodeHandle<sp/>nh;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::Subscriber<sp/><ref refid="client_8cpp_1a24d694a9a8bf73ee31fe92724886a276" kindref="member">sub</ref><sp/>=<sp/>nh.subscribe&lt;assignment_2_2023::PosGoal&gt;(</highlight><highlight class="stringliteral">&quot;/posgoal&quot;</highlight><highlight class="normal">,<sp/>1,<sp/>posgoalCallback);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//pos_publisher<sp/>=<sp/>nh.advertise&lt;assignment_2_2023::Posgoal&gt;(&quot;/posgoal&quot;,<sp/>1000);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>std::thread<sp/>input_thread(SendingCoordinate);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::Rate<sp/>rate(1);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(ros::ok()){</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ros::spinOnce();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::spin();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/root/my_ros/src/assignment_2_2023/src/reachgoals.cpp"/>
+  </compounddef>
+</doxygen>

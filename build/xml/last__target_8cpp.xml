@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="last__target_8cpp" kind="file" language="C++">
+    <compoundname>last_target.cpp</compoundname>
+    <includes local="yes">ros/ros.h</includes>
+    <includes local="yes">assignment_2_2023/Last_target.h</includes>
+    <includes local="yes">assignment_2_2023/PlanningActionGoal.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="3">
+        <label>assignment_2_2023/Last_target.h</label>
+      </node>
+      <node id="4">
+        <label>assignment_2_2023/PlanningActionGoal.h</label>
+      </node>
+      <node id="1">
+        <label>/root/my_ros/src/assignment_2_2023/src/last_target.cpp</label>
+        <link refid="last__target_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="last__target_8cpp_1ad0da36b2558901e21e7a30f6c227a45e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <initializer>=0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/last_target.cpp" line="23" column="7" bodyfile="/root/my_ros/src/assignment_2_2023/src/last_target.cpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="last__target_8cpp_1aa4f0d3eebc3c443f9be81bf48561a217" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <initializer>=0</initializer>
+        <briefdescription>
+<para>variables for the target position </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/last_target.cpp" line="23" column="8" bodyfile="/root/my_ros/src/assignment_2_2023/src/last_target.cpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="last__target_8cpp_1a12b48276fb89f0b623f71f6416f1a4bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void target_position</definition>
+        <argsstring>(const assignment_2_2023::PlanningActionGoal::ConstPtr &amp;msg)</argsstring>
+        <name>target_position</name>
+        <param>
+          <type>const assignment_2_2023::PlanningActionGoal::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Callback for the reaching_goal/goal subscriber. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg(assignment_2_2023::PlanningActionGoal)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>x,y (target position) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/last_target.cpp" line="30" column="6" bodyfile="/root/my_ros/src/assignment_2_2023/src/last_target.cpp" bodystart="30" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="last__target_8cpp_1a1c45d32d1b7eb0113ef181e721dd52c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool send_position</definition>
+        <argsstring>(assignment_2_2023::Last_target::Request &amp;req, assignment_2_2023::Last_target::Response &amp;res)</argsstring>
+        <name>send_position</name>
+        <param>
+          <type>assignment_2_2023::Last_target::Request &amp;</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>assignment_2_2023::Last_target::Response &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+<para>Service callback: fills the response message of the goal position with the values of the variables coming from target_position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>req(assignment_2_2023::Last_target::Request)</parametername>
+<parametername>res(assignment_2_2023::Last_target::Response)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/last_target.cpp" line="39" column="6" bodyfile="/root/my_ros/src/assignment_2_2023/src/last_target.cpp" bodystart="39" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="last__target_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>&lt; subscriber for the target position from /reaching_goal/goal</para>
+<para>&lt; server /last_target_service</para>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/last_target.cpp" line="46" column="5" bodyfile="/root/my_ros/src/assignment_2_2023/src/last_target.cpp" bodystart="46" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Service Node. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Alberto Bono 3962994 </para>
+</simplesect>
+<simplesect kind="date"><para>04/03/2024</para>
+</simplesect>
+Subscribes to:<linebreak/>
+ /reaching_goal/goal</para>
+<para>Server:<linebreak/>
+ /last_target_service</para>
+<para>Description:<linebreak/>
+ When called, returns the coordinates of the last target set by the user. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="19"><highlight class="preprocessor">#include<sp/>&quot;ros/ros.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;assignment_2_2023/Last_target.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;assignment_2_2023/PlanningActionGoal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x=0,<ref refid="last__target_8cpp_1aa4f0d3eebc3c443f9be81bf48561a217" kindref="member">y</ref>=0;<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="last__target_8cpp_1a12b48276fb89f0b623f71f6416f1a4bc" kindref="member">target_position</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>assignment_2_2023::PlanningActionGoal::ConstPtr<sp/>&amp;msg){</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>x=msg-&gt;goal.target_pose.pose.position.x;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="last__target_8cpp_1aa4f0d3eebc3c443f9be81bf48561a217" kindref="member">y</ref>=msg-&gt;goal.target_pose.pose.position.y;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="last__target_8cpp_1a1c45d32d1b7eb0113ef181e721dd52c9" kindref="member">send_position</ref>(assignment_2_2023::Last_target::Request<sp/>&amp;req,<sp/>assignment_2_2023::Last_target::Response<sp/>&amp;res){</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>res.goal_x<sp/>=<sp/>x;<sp/><sp/></highlight><highlight class="comment">//<sp/>Assigns<sp/>the<sp/>x-coordinate<sp/>of<sp/>the<sp/>goal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>res.goal_y<sp/>=<sp/><ref refid="last__target_8cpp_1aa4f0d3eebc3c443f9be81bf48561a217" kindref="member">y</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>Assigns<sp/>the<sp/>y-coordinate<sp/>of<sp/>the<sp/>goal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>Returns<sp/>true<sp/>to<sp/>indicate<sp/>that<sp/>the<sp/>service<sp/>has<sp/>been<sp/>handled<sp/>correctly</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="last__target_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kindref="member">main</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv){</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ros::init(argc,argv,</highlight><highlight class="stringliteral">&quot;last_target_service&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ros::NodeHandle<sp/>n;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ros::Subscriber<sp/><ref refid="client_8cpp_1a24d694a9a8bf73ee31fe92724886a276" kindref="member">sub</ref><sp/>=<sp/>n.subscribe&lt;assignment_2_2023::PlanningActionGoal&gt;(</highlight><highlight class="stringliteral">&quot;/reaching_goal/goal&quot;</highlight><highlight class="normal">,<sp/>1,<sp/><ref refid="last__target_8cpp_1a12b48276fb89f0b623f71f6416f1a4bc" kindref="member">target_position</ref>);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ros::ServiceServer<sp/>service=n.advertiseService(</highlight><highlight class="stringliteral">&quot;/last_target_service&quot;</highlight><highlight class="normal">,<ref refid="last__target_8cpp_1a1c45d32d1b7eb0113ef181e721dd52c9" kindref="member">send_position</ref>);<sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ros::spin();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/root/my_ros/src/assignment_2_2023/src/last_target.cpp"/>
+  </compounddef>
+</doxygen>

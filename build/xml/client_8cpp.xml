@@ -1,0 +1,390 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="client_8cpp" kind="file" language="C++">
+    <compoundname>client.cpp</compoundname>
+    <includes local="no">ros/ros.h</includes>
+    <includes local="no">actionlib/client/simple_action_client.h</includes>
+    <includes local="no">assignment_2_2023/PlanningAction.h</includes>
+    <includes local="no">assignment_2_2023/Posvel.h</includes>
+    <includes local="no">geometry_msgs/Point.h</includes>
+    <includes local="no">geometry_msgs/Pose.h</includes>
+    <includes local="no">geometry_msgs/Twist.h</includes>
+    <includes local="no">nav_msgs/Odometry.h</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">thread</includes>
+    <incdepgraph>
+      <node id="9">
+        <label>nav_msgs/Odometry.h</label>
+      </node>
+      <node id="4">
+        <label>assignment_2_2023/PlanningAction.h</label>
+      </node>
+      <node id="6">
+        <label>geometry_msgs/Point.h</label>
+      </node>
+      <node id="5">
+        <label>assignment_2_2023/Posvel.h</label>
+      </node>
+      <node id="8">
+        <label>geometry_msgs/Twist.h</label>
+      </node>
+      <node id="7">
+        <label>geometry_msgs/Pose.h</label>
+      </node>
+      <node id="3">
+        <label>actionlib/client/simple_action_client.h</label>
+      </node>
+      <node id="2">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="10">
+        <label>iostream</label>
+      </node>
+      <node id="11">
+        <label>thread</label>
+      </node>
+      <node id="1">
+        <label>/root/my_ros/src/assignment_2_2023/src/client.cpp</label>
+        <link refid="client_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="client_8cpp_1a94f98c123703f2950c9a529dd67ca5c5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float robot_x</definition>
+        <argsstring></argsstring>
+        <name>robot_x</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/client.cpp" line="32" column="7" bodyfile="/root/my_ros/src/assignment_2_2023/src/client.cpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="client_8cpp_1ad10724c6ea6f6012098ff6267f6ffb65" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float robot_y</definition>
+        <argsstring></argsstring>
+        <name>robot_y</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/client.cpp" line="32" column="16" bodyfile="/root/my_ros/src/assignment_2_2023/src/client.cpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="client_8cpp_1a553f2ddbab1dcbd0ffc57accd39fdf6e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float robot_vel_x</definition>
+        <argsstring></argsstring>
+        <name>robot_vel_x</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/client.cpp" line="32" column="25" bodyfile="/root/my_ros/src/assignment_2_2023/src/client.cpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="client_8cpp_1aa129247dd6d09f9b30291a8c786aa9b5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float robot_vel_y</definition>
+        <argsstring></argsstring>
+        <name>robot_vel_y</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+<para>variables for robot position and robot speed </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/client.cpp" line="32" column="38" bodyfile="/root/my_ros/src/assignment_2_2023/src/client.cpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="client_8cpp_1abbe792bb2cf67584b86443440a194f46" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool busy</definition>
+        <argsstring></argsstring>
+        <name>busy</name>
+        <initializer>=false</initializer>
+        <briefdescription>
+<para>variable for managing the condition block <linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/client.cpp" line="33" column="7" bodyfile="/root/my_ros/src/assignment_2_2023/src/client.cpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="client_8cpp_1ac212754f62baf34f3f6f79651a577733" prot="public" static="no" mutable="no">
+        <type>ros::Publisher</type>
+        <definition>ros::Publisher pos_publisher</definition>
+        <argsstring></argsstring>
+        <name>pos_publisher</name>
+        <briefdescription>
+<para>publisher for position and speed of robot <linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/client.cpp" line="34" column="16" bodyfile="/root/my_ros/src/assignment_2_2023/src/client.cpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="client_8cpp_1a24d694a9a8bf73ee31fe92724886a276" prot="public" static="no" mutable="no">
+        <type>ros::Subscriber</type>
+        <definition>ros::Subscriber sub</definition>
+        <argsstring></argsstring>
+        <name>sub</name>
+        <briefdescription>
+<para>subscriber for position and speed of robot from odom </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/client.cpp" line="35" column="17" bodyfile="/root/my_ros/src/assignment_2_2023/src/client.cpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="client_8cpp_1ae77e5d68ff0f4892f5154064e8b5e21c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void odomCallback</definition>
+        <argsstring>(const nav_msgs::Odometry::ConstPtr &amp;msg)</argsstring>
+        <name>odomCallback</name>
+        <param>
+          <type>const nav_msgs::Odometry::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Callback for the odom subscriber. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg(nav_msgs::Odometry)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>robot_x, robot_y, robot_vel_x, robot_vel_y </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/client.cpp" line="42" column="6" bodyfile="/root/my_ros/src/assignment_2_2023/src/client.cpp" bodystart="42" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="client_8cpp_1ae58f973227bed2ce6a22eb4a13f76c32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void userInput</definition>
+        <argsstring>()</argsstring>
+        <name>userInput</name>
+        <briefdescription>
+<para>Function to handle user input for sending goals to a ROS action server. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>&lt; action client for the PlanningAction</para>
+<para>&lt; Main loop for user interaction <linebreak/>
+</para>
+<para>&lt; action has finished, get and print the status</para>
+<para>&lt;receive the status</para>
+<para>&lt; insertion of the goal coordinates</para>
+<para>&lt; options when a goal is in progress to allow the user to cancel or check the goal</para>
+<para>&lt; condition for restart the loop</para>
+<para>&lt; condition for handling invalid input</para>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/client.cpp" line="52" column="6" bodyfile="/root/my_ros/src/assignment_2_2023/src/client.cpp" bodystart="52" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="client_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+<para>Main function thread input_thread and publish posvel. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/root/my_ros/src/assignment_2_2023/src/client.cpp" line="120" column="5" bodyfile="/root/my_ros/src/assignment_2_2023/src/client.cpp" bodystart="120" bodyend="148"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Action Client Node. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Alberto Bono 3962994 </para>
+</simplesect>
+<simplesect kind="date"><para>04/03/2024</para>
+</simplesect>
+Subscribes to:<linebreak/>
+ /odom Publisher to :<linebreak/>
+ /posvel SimpleActionClient:<linebreak/>
+ /reaching_goal</para>
+<para>Description:<linebreak/>
+ Allows users to set a target (x, y) or cancel it. Utilizes action server feedback/status to determine target achievement. Publishes robot position and velocity as a custom message (x, y, vel_x, vel_z) based on the topic <computeroutput>/odom</computeroutput>. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="21"><highlight class="preprocessor">#include<sp/>&lt;ros/ros.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;actionlib/client/simple_action_client.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assignment_2_2023/PlanningAction.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assignment_2_2023/Posvel.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;geometry_msgs/Point.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;geometry_msgs/Pose.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;geometry_msgs/Twist.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nav_msgs/Odometry.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>robot_x<sp/>=<sp/>0.0,<sp/>robot_y<sp/>=<sp/>0.0,<sp/>robot_vel_x<sp/>=<sp/>0.0,<sp/><ref refid="client_8cpp_1aa129247dd6d09f9b30291a8c786aa9b5" kindref="member">robot_vel_y</ref><sp/>=<sp/>0.0;<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><ref refid="client_8cpp_1abbe792bb2cf67584b86443440a194f46" kindref="member">busy</ref>=</highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">ros::Publisher<sp/><ref refid="client_8cpp_1ac212754f62baf34f3f6f79651a577733" kindref="member">pos_publisher</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">ros::Subscriber<sp/><ref refid="client_8cpp_1a24d694a9a8bf73ee31fe92724886a276" kindref="member">sub</ref>;<sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="client_8cpp_1ae77e5d68ff0f4892f5154064e8b5e21c" kindref="member">odomCallback</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>nav_msgs::Odometry::ConstPtr<sp/>&amp;msg)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>robot_x<sp/>=<sp/>msg-&gt;pose.pose.position.x;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>robot_y<sp/>=<sp/>msg-&gt;pose.pose.position.y;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>robot_vel_x<sp/>=<sp/>msg-&gt;twist.twist.linear.x;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="client_8cpp_1aa129247dd6d09f9b30291a8c786aa9b5" kindref="member">robot_vel_y</ref><sp/>=<sp/>msg-&gt;twist.twist.linear.y;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="client_8cpp_1ae58f973227bed2ce6a22eb4a13f76c32" kindref="member">userInput</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>actionlib::SimpleActionClient&lt;assignment_2_2023::PlanningAction&gt;<sp/>client(</highlight><highlight class="stringliteral">&quot;/reaching_goal&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);<sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Waiting<sp/>for<sp/>action<sp/>server<sp/>to<sp/>start...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>client.waitForServer();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Action<sp/>server<sp/>started!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>goal_x,<sp/><ref refid="dist__vel_8cpp_1a86a424410ae6b4f43baca838da5f993b" kindref="member">goal_y</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>input=</highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(ros::ok()<sp/>&amp;&amp;<sp/>!ros::isShuttingDown())<sp/>{<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(client.waitForResult(ros::Duration(0.1))<sp/>&amp;&amp;<sp/><ref refid="client_8cpp_1abbe792bb2cf67584b86443440a194f46" kindref="member">busy</ref>){<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>actionlib::SimpleClientGoalState<sp/>state<sp/>=<sp/>client.getState();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Action<sp/>finished:<sp/>%s<sp/>\n&quot;</highlight><highlight class="normal">,state.toString().c_str());</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="client_8cpp_1abbe792bb2cf67584b86443440a194f46" kindref="member">busy</ref>=</highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="client_8cpp_1abbe792bb2cf67584b86443440a194f46" kindref="member">busy</ref>){</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;INSERT<sp/>THE<sp/>GOAL<sp/>COORDINATE<sp/>(x,y)<sp/>\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Insert<sp/>&apos;x&apos;<sp/>coordinate,<sp/>then<sp/>press<sp/>ENTER:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(std::cin<sp/>&gt;&gt;<sp/>goal_x))<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>input<sp/>for<sp/>&apos;x&apos;<sp/>coordinate&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin.clear();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(),<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Insert<sp/>&apos;y&apos;<sp/>coordinate,<sp/>then<sp/>press<sp/>ENTER:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(std::cin<sp/>&gt;&gt;<sp/><ref refid="dist__vel_8cpp_1a86a424410ae6b4f43baca838da5f993b" kindref="member">goal_y</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>input<sp/>for<sp/>&apos;y&apos;<sp/>coordinate&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin.clear();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(),<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Sending<sp/>the<sp/>goal&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assignment_2_2023::PlanningGoal<sp/>goal;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.target_pose.pose.position.x<sp/>=<sp/>goal_x;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.target_pose.pose.position.y<sp/>=<sp/><ref refid="dist__vel_8cpp_1a86a424410ae6b4f43baca838da5f993b" kindref="member">goal_y</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>client.sendGoal(goal);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="client_8cpp_1abbe792bb2cf67584b86443440a194f46" kindref="member">busy</ref>=</highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/><sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="client_8cpp_1abbe792bb2cf67584b86443440a194f46" kindref="member">busy</ref>){<sp/></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;-&gt;Press<sp/>&apos;x&apos;<sp/>to<sp/>cancel<sp/>the<sp/>goal,<sp/>then<sp/>press<sp/>Enter:&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;-&gt;Press<sp/>&apos;c&apos;<sp/>to<sp/>check<sp/>if<sp/>the<sp/>goal<sp/>has<sp/>been<sp/>reached,<sp/>then<sp/>press<sp/>Enter:&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>input;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(input==</highlight><highlight class="charliteral">&apos;x&apos;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>client.cancelGoal();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Goal<sp/>cancelled!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="client_8cpp_1abbe792bb2cf67584b86443440a194f46" kindref="member">busy</ref>=</highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin.clear();</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(),<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="client_8cpp_1abbe792bb2cf67584b86443440a194f46" kindref="member">busy</ref><sp/>&amp;&amp;<sp/>input==</highlight><highlight class="charliteral">&apos;c&apos;</highlight><highlight class="normal">)<sp/>{<sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;wait<sp/>for<sp/>the<sp/>result<sp/>try<sp/>again&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin.clear();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(),<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/><sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>input!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin.clear();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(),<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="client_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::init(argc,<sp/>argv,<sp/></highlight><highlight class="stringliteral">&quot;goal_sender_node&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::NodeHandle<sp/>nh;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::Rate<sp/>rate(1);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>rate.sleep();</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="client_8cpp_1ac212754f62baf34f3f6f79651a577733" kindref="member">pos_publisher</ref><sp/>=<sp/>nh.advertise&lt;assignment_2_2023::Posvel&gt;(</highlight><highlight class="stringliteral">&quot;/posvel&quot;</highlight><highlight class="normal">,<sp/>1000);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="client_8cpp_1a24d694a9a8bf73ee31fe92724886a276" kindref="member">sub</ref><sp/>=<sp/>nh.subscribe&lt;nav_msgs::Odometry&gt;(</highlight><highlight class="stringliteral">&quot;/odom&quot;</highlight><highlight class="normal">,<sp/>1,<sp/><ref refid="client_8cpp_1ae77e5d68ff0f4892f5154064e8b5e21c" kindref="member">odomCallback</ref>);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>std::thread<sp/>input_thread(<ref refid="client_8cpp_1ae58f973227bed2ce6a22eb4a13f76c32" kindref="member">userInput</ref>);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(ros::ok())<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assignment_2_2023::Posvel<sp/>pos_msg;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos_msg.x<sp/>=<sp/>robot_x;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos_msg.y<sp/>=<sp/>robot_y;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos_msg.vel_x<sp/>=<sp/>robot_vel_x;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos_msg.vel_y<sp/>=<sp/><ref refid="client_8cpp_1aa129247dd6d09f9b30291a8c786aa9b5" kindref="member">robot_vel_y</ref>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="client_8cpp_1ac212754f62baf34f3f6f79651a577733" kindref="member">pos_publisher</ref>.publish(pos_msg);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rate.sleep();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ros::spinOnce();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>input_thread.join();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/root/my_ros/src/assignment_2_2023/src/client.cpp"/>
+  </compounddef>
+</doxygen>

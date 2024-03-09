@@ -59,6 +59,7 @@ find_package(catkin REQUIRED COMPONENTS
    FILES
    Posvel.msg
    PosGoal.msg
+   Dimarray.msg
    
  )
 
@@ -145,7 +146,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/assignment_2_2023_node.cpp)
-add_executable(client_node src/client.cpp)
+add_executable(client_node src/clientandservice.cpp)
 add_executable(subscriber1_node src/subscriber.cpp)
 add_executable(last_target_service src/last_target.cpp)
 add_executable(dist_vel_service src/dist_vel.cpp)
